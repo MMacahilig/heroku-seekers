@@ -1,0 +1,98 @@
+---
+title: Participant Stories
+slug: participants-stories
+position: 4
+listed: true
+published: true
+is_layout: false
+seo_title: Participants Stories
+editable_elements:
+main/stories/stories: "<h3>\r\n       Click on the videos to hear some of our participants
+    share their stories\r\n     </h3>"
+---
+{% extends parent %}
+{% block main %}
+
+{% block stories %}
+<div class="fixed-bg bg-1" style="">
+    <div class='container marketing'>
+        <!--  <div class='page-header container text-center white-background'>-->
+        <div class='lead'style="text-align:center">
+            {% editable_text 'stories' %}
+        
+            <h3>
+                Click on the videos to hear our participants share their stories
+            </h3>
+            {% endeditable_text %}
+        </div>
+        <div class='lead'style="text-align:center">
+            
+            <h3>
+                2017
+            </h3>
+            
+        </div>
+        
+        <div class='row'>
+            {% for story in contents.2017_stories %}
+            <div class='col-lg-4'>
+                <a href="" data-target="#{{story._slug}}-modal" data-toggle='modal'><img alt='{{story.student_name | escape }}' src='{{story.url | escape }}' ></a>
+                <h3 style="line-height:0.2em;">  {{story.student_name | escape }}</h3>
+                <p>  {{story.origin | escape }}</p>
+                <b>{{story.participant_stream | escape }}</b>
+                <p>{{story.company | escape }}</p>
+        
+
+                <div aria-hidden='true' class='modal fade' id='{{story._slug}}-modal' role='dialog' tabindex='-1'>
+                    <div class='modal-dialog'>
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>×</button>
+                                <h2 class='modal-title' id='myModalLabel'>{{story.student_name}}</h2>
+                            </div>
+                            <div class='modal-body'>
+                                <div class='player' id='{{story._slug}}-video' src='{{story.youtube_video_url | escape}}'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class='lead'style="text-align:center">
+            
+            <h3>
+                2016
+            </h3>
+            
+        </div>
+        <div class='row'>
+            {% for story in contents.stories %}
+            <div class='col-lg-4'>
+                <a href="" data-target="#{{story._slug}}-modal" data-toggle='modal'><img alt='{{story.student_name | escape }}' src='{{story.url | escape }}' ></a>
+                <h3 style="line-height:0.2em;">  {{story.student_name | escape }}</h3>
+                <p>  {{story.participant_stream | escape }}</p>
+                <b>{{story.stream | escape }}</b>
+                <p>{{story.company | escape }}</p>
+                
+                <div aria-hidden='true' class='modal fade' id='{{story._slug}}-modal' role='dialog' tabindex='-1'>
+                    <div class='modal-dialog'>
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>×</button>
+                                <h2 class='modal-title' id='myModalLabel'>{{story.student_name}}</h2>
+                            </div>
+                            <div class='modal-body'>
+                                <div class='player' id='{{story._slug}}-video' src='{{story.youtube_video_url | escape}}'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+{% endblock %}

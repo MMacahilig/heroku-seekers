@@ -1,0 +1,46 @@
+---
+title: Employment Partners
+slug: employment-partners
+position: 3
+listed: true
+published: true
+is_layout: false
+seo_title: Employment Partners
+---
+{% extends parent %}
+{% block main %}
+<div class='container-fluid'>
+  {% include page_header %}
+  {% for company in contents.companies %}
+  {% cycle  '<div class="row company-row">', '', '','', '',''%}
+  {% cycle  '<div class="col-lg-2">', '<div class="col-lg-2">', '<div class="col-lg-2">','<div class="col-lg-2">', '<div class="col-lg-2">', '<div class="col-lg-2">'%}
+  <img alt='{{company.name | escape}}' class='img-responsive' src='{{company.url | escape}}'>
+  {% cycle  '</div>', '</div>', '</div>','</div>', '</div>', '</div>'%}
+  {% cycle   '','', '','','','</div>''%}
+  {% endfor %}
+</div>
+<!--
+<div style="padding:30px">
+    <h3>
+      Coming Soon
+    </h3>
+    
+    {% for company in contents.non_companies %}
+    {% cycle  '<div class="row company-row">', '', '','', '',''%}
+    {% cycle  '<div class="col-lg-2">', '<div class="col-lg-2">', '<div class="col-lg-2">','<div class="col-lg-2">', '<div class="col-lg-2">', '<div class="col-lg-2">'%}
+    <img alt='{{company.name | escape}}' class='img-responsive' src='{{company.image.url | escape}}'>
+    {% cycle  '</div>', '</div>', '</div>','</div>', '</div>', '</div>'%}
+    {% cycle   '','', '','','','</div>''%}
+    {% endfor %}
+
+  {% for company in contents.non_companies %}
+  {% cycle  '<div class="row company-row">', '', '',''%}
+  {% cycle  '<div class="col-lg-2">', '<div class="col-lg-2">', '<div class="col-lg-2">','<div class="col-lg-2">'%}
+  <img alt='{{company.name | escape}}' class='img-responsive' src='{{company.url | escape}}'>
+  {% cycle  '</div>', '</div>', '</div>','</div>'%}
+  {% cycle  '','','','</div>''%}
+  {% endfor %}
+
+</div>
+-->
+{% endblock %}

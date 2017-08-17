@@ -1,0 +1,22 @@
+name: Team locations
+slug: team_locations
+description: Team locations
+label_field_name: location
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- location:
+    label: Location
+    type: string
+    required: true
+    localized: false
+- team_members:
+    label: Team Members
+    type: has_many
+    required: false
+    localized: false
+    target: team_members
+    inverse_of: location
+    ui_enabled: true

@@ -1,0 +1,59 @@
+---
+title: Our Model
+slug: our-model
+listed: true
+published: true
+cache_strategy: none
+response_type: text/html
+position: 2
+seo_title: Our Model
+editable_elements:
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Our_Program.png"
+  main/about_us_text: "<p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p>CareerSeekers
+    is an adaptation of the\r\nsuccessful
+    \r\n<a rel=\"nofollow\" href=\"http://www.careertrackers.org.au/\"
+    title=\"Link: http://careertrackers.org.au/) \">CareerTrackers Indigenous Internship Program</a>&nbsp;.
+    \ </p>\r\n\r\n\r\n\r\n<p>In 2015, the Founder &amp; CEO of\r\nCareerTrackers sought
+    to expand the model to support corporate Australia’s\r\nfocus on multicultural
+    diversity while tackling the issue of underemployment of\r\nasylum seekers and
+    refugees.</p>\r\n\r\n\r\n\r\n<p>Core to the success of CareerSeekers are the\r\nfollowing
+    elements:&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n
+    <p><b>Participants\r\nat the Core</b>
+    – from day one we have adopted the belief that the interests of our participants must always drive every aspect of our program.
+    Our approach aims to first find the willing individuals, work with them to define a career path, and then build
+    relationships between prospective employers and individuals keen to work. Our Participants at the Core philosophy has
+    driven the design of the CareerSeekers program.  It is embedded in every decision we make.  It is an easy compass for decision making.
+   </p>\r\n\r\n\r\n\r\n<p><b>Inspire\r\nExcellence</b>
+    – the purpose of CareerSeekers is to Create Opportunities that Inspire Excellence.
+    It is this purpose the drives us to push our participants in every aspect of our program.
+    We believe our participants can achieve anything they set their minds to.  We also believe it is
+    imperative that employers provide challenging work.  It is essential that interns and employers
+    expect the most of each other.  Without this expectation, we do not believe excellence can occur.
+   </p>\r\n\r\n\r\n\r\n
+   <p><b>Meaningful\r\nPartnerships</b>
+     – partnering is our strength.  We recognise that partnerships are essential to our success.
+     We also recognise that these partnerships must be long-term as this is a key element for
+     building trust with our stakeholders.   We want to partner with organisations providing a range of
+     support to asylum seekers and refugees.  We see partnering as a way to drive efficiency
+     in the social enterprise ecosystem.</p>\r\n\r\n<p></p><p></p>"
+---
+
+{% extends parent %}
+{% block main %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Our_Program.png'>
+</div>
+{% endif %}
+<div class='container-fluid'>
+  {% include page_header %}
+
+  {% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+
+  <div class='col-lg-12'>
+    {{about_us_text}}
+  </div>
+
+</div>
+{% endblock %}

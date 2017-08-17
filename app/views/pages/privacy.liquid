@@ -1,0 +1,80 @@
+---
+title: Privacy Policy
+slug: privacy
+position: 9
+listed: false
+published: true
+is_layout: false
+seo_title: Privacy Policy
+editable_elements:
+  main/privacy policy: "<p>\r\n    Something here.\r\n  </p>"
+---
+{% extends parent %}
+{% block main %}
+<div class='container-fluid'>
+  {% include page_header %}
+  {% editable_text 'privacy policy' %}
+  <p>
+    Something here.
+  </p>
+  {% endeditable_text %}
+  <div class="col-md-12 test">
+  </div>
+  
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+	$(document).ready(function() {
+		/*$.get('https://script.google.com/a/macros/careertrackers.org.au/s/AKfycbzRvDcA5yHTAFpLJ5EzVITaW8CFJ91DjQ_d-H9m7fUcB2SdqbU/exec')
+		.done(function(data){console.log(data)});
+		
+		$.ajax({
+			url: 'https://script.google.com/a/macros/careertrackers.org.au/s/AKfycbzRvDcA5yHTAFpLJ5EzVITaW8CFJ91DjQ_d-H9m7fUcB2SdqbU/exec',
+			type: 'GET',
+			crossDomain: 'TRUE',
+			xhrFields: {
+      			withCredentials: true
+   			}
+		}).done(function(){alert("done");});
+		var url = 'https://script.google.com/a/macros/careertrackers.org.au/s/AKfycbzRvDcA5yHTAFpLJ5EzVITaW8CFJ91DjQ_d-H9m7fUcB2SdqbU/exec';
+		$.getJSON(url+"?callback=?",
+              {method:"populate_list"},
+              function (data) { 
+                alert(JSON.stringify(data)); 
+              });
+		});*/
+		window.jsoncallBack = function(data) {
+			//var parsing = JSON.parse(data);
+			$(".test").append(data.dskfce);
+			//console.log(data.link);
+		}
+		//var jsoncallBack = 'c'+Math.floor((Math.random()*100000000)+1);
+		
+		$.ajax({
+			url: 'https://script.google.com/macros/s/AKfycbzRvDcA5yHTAFpLJ5EzVITaW8CFJ91DjQ_d-H9m7fUcB2SdqbU/exec?prefix=jsoncallBack',
+			type: 'GET',
+			crossDomain: 'TRUE',
+			sync: false,
+			dataType: 'jsonp',
+			contentType: "application/json",
+			xhrFields: {
+      			withCredentials: true
+   			},
+   			success: function (json) {
+   			var parser = JSON.parse(json);
+        		console.log(parser);
+    		},
+    		error: function(jqXHR, textStatus, errorThrown) {
+			   console.log("error: " + errorThrown);
+			}
+		});
+		
+		
+		//src="https://script.google.com/macros/s/AKfycbzRvDcA5yHTAFpLJ5EzVITaW8CFJ91DjQ_d-H9m7fUcB2SdqbU/exec?&prefix=alert"
+	});
+</script>
+{% endblock %}
+
+

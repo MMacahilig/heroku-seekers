@@ -1,0 +1,312 @@
+---
+title: Contact Us
+slug: contact-us
+position: 7
+listed: true
+published: true
+is_layout: false
+seo_title: Contact Us
+---
+{% extends parent %}
+
+{% block main %}
+
+{% assign flash_message = session.flash.message%}
+{% case flash_message['status'] %}
+{% when 'success' %}
+<div class='alert alert-success alert-dismissable'>
+  <button aria-hidden='true' class='close' data-dismiss='alert' type='button'>×</button>
+  <strong>Congratulations!</strong>
+  {{flash_message['message']}}
+</div>
+{% when 'error' %}
+<div class='alert alert-danger alert-dismissable'>
+  <button aria-hidden='true' class='close' data-dismiss='alert' type='button'>×</button>
+  <strong>Error!</strong>
+  {{flash_message['message']}}
+</div>
+{% endcase %}
+
+<div class='container-fluid'>
+
+  {% include page_header %}
+  <div class='col-md-6'>
+    <p>
+      <div class="email">
+        <i class='fa fa-envelope'></i>
+            <a href="mailto:info@careerseekers.org.au"><i class="mail large square icon"></i>info@careerseekers.org.au</a>
+            <br>
+            <p>By appointment only</p>
+      </div>
+
+      {% for contact_us in contents.contact_us %}
+      <h3>{{contact_us.location}}</h3>
+      <ul class='list-unstyled contact inherit-font-size'>
+        {% if contact_us.address %}
+        <li>
+          <span class='contact_address'>
+            {{contact_us.address}}
+          </span>
+        </li>
+        {% endif %}
+        {% if contact_us.phone %}
+        <li class='contact_phone padded-top-small'>
+
+          <a href='tel:{{contact_us.phone}}'>
+            {{contact_us.phone}}
+          </a>
+        </li>
+        {% endif %}
+        {% if contact_us.email %}
+        <li class='contact_email padded-top-small'>
+
+          <a href='mailto:{{contact_us.email}}'>
+            {{contact_us.email}}
+          </a>
+        </li>
+
+        {% endif %}
+        {% if contact_us.mapid %}
+        <div style='overflow:hidden;height:250px;width:550px;'>
+          <div id='{{contact_us.mapid}}' style='height:250px;width:550px;'>
+          </div>
+        </div>
+
+        {% block javascripts %}
+        <script type='text/javascript'>
+              function init_map(){
+
+                var myOptions = {zoom:17,center:new google.maps.LatLng({{contact_us.latitude}}), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                map = new google.maps.Map(document.getElementById('{{contact_us.mapid}}'),myOptions);
+                marker = new google.maps.Marker({map: map,position: new google.maps.LatLng({{contact_us.latitude}})
+                });
+                infowindow = new google.maps.InfoWindow({content:'{{contact_us.description}}'});
+                google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});
+                infowindow.open(map,marker);
+              }
+             google.maps.event.addDomListener(window, 'load', init_map);
+       </script>
+        {% endblock %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+
+
+
+
+
+
+      <br>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <div class='col-md-12  '>
+            <h3 class='register'>Register your interest</h3>
+            <h5> Please note - referrals to our student stream have closed for 2017.</h5>
+            <ul class='nav nav-tabs'>
+              <li class='active'>
+                <a data-toggle='tab' href='#students'>Participant Registration Form</a>
+              </li>
+
+              <li>
+                <a data-toggle='tab' href='#employers'>Employers</a>
+              </li>
+              <!--
+              <li>
+              	<a data-toggle='tab' href='#jobseeker'>Join our Team!</a>
+              </li>-->
+            </ul>
+            <div class='tab-content'>
+              <div class='tab-pane active col-md-11' id='students'>
+                <form action='/applicants' id='student-form' method='POST' role='form'>
+                  {% csrf_param %}
+                  <fieldset>
+
+                    <div class='form-group'>
+                      <label class='control-label' for='firstName'>First Name</label>
+                      <input class='form-control' id='firstName' name='student[first_name]' placeholder='First name' type='text'>
+                    </div>
+                    <div class='form-group'>
+                      <label class='control-label' for='lastName'>Last Name</label>
+                      <input class='form-control' id='lastName' name='student[last_name]' placeholder='Last name' type='text'>
+                    </div>
+                    <div class='form-group'>
+                      <label class='control-label' for='phone'>Phone</label>
+                      <input class='form-control' id='phone' name='student[phone]' placeholder='Phone' type='text'>
+                    </div>
+                    <div class='form-group'>
+                      <label class='control-label' for='email'>Email</label>
+                      <div class='left-inner-addon'>
+                        <i class='fa fa-envelope-o fa-fw'></i>
+                        <input class='form-control' id='email' name='student[email]' placeholder='Email address' type='text'>
+                      </div>
+                    </div>
+                    <div class='form-group'>
+                      <label  class='control-label'for='city'>City</label>
+                      <select class='form-control' id='city' name='student[city]'>
+                        <option selected='' value=''></option>
+                        <option value='Sydney'>Sydney</option>
+                        <option value='Melbourne'>Melbourne</option>
+                      </select>
+                    </div>
+                    <div class='form-group'>
+                      <label class='control-label' for='current_status'>Status</label>
+                      <select class='form-control' id='current_status' name='student[current_status]'>
+                        <option selected='' value=''></option>
+                        <option value='Asylum Seeker'>Asylum Seeker</option>
+                        <option value='Temporary Protection'>Temporary Protection</option>
+                        <option value='Refugee'>Refugee</option>
+                      </select>
+                    </div>
+
+                    <div class='form-group'>
+                      <label class='control-label' for='stream'>Participant Stream</label>
+                      <select class='form-control' id='stream' name='student[stream]'>
+                        <option selected='' value=''></option>
+                        <option value='Mid-Career'>Mid-Career Professional</option>
+                        <option value='University'>University Student  (closed for 2017)</option>
+                      </select>
+                    </div>
+
+                    <div class='form-group'>
+                      <label class='control-label' for='degree'>Name of Qualification</label>
+                      <input class='form-control' id='degree' name='student[degree]' placeholder='Qualification' type='text'>
+                    </div>
+                    <div class='form-group'>
+                      <label class='control-label' for='university'>Name of University</label>
+                      <input class='form-control' id='university' name='student[university]' placeholder='University' type='text'>
+                    </div>
+                    <div class='form-group pull-right'>
+                      <button class='btn orange-button' type='submit'>Submit</button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+              <div class='tab-pane col-md-11' id='employers'>
+            <p class='panel-body'>
+
+              <form action='/employers' class='form-horizontal' id='employers-form' method='POST' role='form'>
+                {% csrf_param %}
+                <fieldset>
+                  <div class='form-group'>
+                    <label class='col-sm-2 control-label' for='role'>Company Name</label>
+                    <div class='col-sm-10'>
+                      <input class='form-control' name='employer[company]' placeholder='Company' type='text'>
+                    </div>
+                  </div>
+                  <div class='form-group'>
+                    <label class='col-sm-2 control-label' for='name'>Contact Person</label>
+                    <div class='col-sm-10'>
+                      <input class='form-control' name='employer[name]' placeholder='Name' type='text'>
+                    </div>
+                  </div>
+
+                  <div class='form-group'>
+                    <label class='col-sm-2 control-label' for='title'>Title</label>
+                    <div class='col-sm-10'>
+                      <input class='form-control' name='employer[title]' placeholder='Title' type='text'>
+                    </div>
+                  </div>
+                  <div class='form-group'>
+                    <label class='col-sm-2 control-label' for='role'>Phone</label>
+                    <div class='col-sm-10'>
+                      <input class='form-control' name='employer[phone]' placeholder='Phone' type='text'>
+                    </div>
+                  </div>
+                  <div class='form-group'>
+                    <label class='col-sm-2 control-label' for='email'>Email</label>
+                    <div class='col-sm-10'>
+                      <input class='form-control' name='employer[email]' placeholder='Email' type='text'>
+                    </div>
+                  </div>
+                  <div class='form-group pull-right'>
+                    <button class='btn orange-button' type='submit'>Submit</button>
+                  </div>
+                </fieldset>
+              </form>
+            </p>
+          </div>
+
+
+            </div>
+          </div>
+  </div>
+
+  {% block javascripts %}
+  <script>
+
+
+      if ($( "#student-form" ).length) {
+        var metrics = [
+                      [ "[name='student[last_name]']", 'presence', 'Last name is required' ],
+                      [ "[name='student[first_name]']", 'presence', 'First name is required' ],
+                      [ "[name='student[email]']", 'presence', 'Email address is required' ],
+                      [ "[name='student[email]']", 'email', 'Invalid email address' ],
+                      [ "[name='student[phone]']", 'presence', 'Phone is required' ],
+                      [ "[name='student[university]']", 'presence', 'university is required' ],
+                      [ "[name='student[degree]']", 'presence', 'Degree is required' ],
+                      [ "[name='student[stream]']", 'presence', 'Participant Stream is required' ],
+                      [ "[name='student[current_status]']", 'presence', 'Your Status is required' ],
+                      [ "[name='student[city]']", 'presence', 'Your city is required' ]
+                    ];
+
+        $( "#student-form" ).nod( metrics , {
+                          groupSelector: ".form-group",
+                          groupClass: "has-error",
+                          helpSpanDisplay: "help-block small"
+        });
+      }
+
+      if ($( "#employers-form" ).length) {
+        var metrics = [
+                      [ "[name='employer[name]']", 'presence', 'Name is required' ],
+                      [ "[name='employer[company]']", 'presence', 'Company name is required' ],
+                      [ "[name='employer[email]']", 'presence', 'Email address is required' ],
+                      [ "[name='employer[email]']", 'email', 'Invalid email address' ],
+                      [ "[name='employer[phone]']", 'presence', 'Phone is required' ],
+                      [ "[name='employer[title]']", 'presence', 'title is required' ],
+                    ];
+
+        $( "#employers-form" ).nod( metrics , {
+                          groupSelector: ".form-group",
+                          groupClass: "has-error",
+                          helpSpanDisplay: "help-block small"
+        });
+      }
+      if($("#jobseeker-form").length) {
+      var metrics = [
+                    [ "[name='jobseeker[name]']", 'presence', 'Name is required'],
+                    [ "[name='jobseeker[phone]']", 'presence', 'Phone is required'],
+                    [ "[name='jobseeker[email]']", 'presence', 'Email is required'],
+                    [ '#jobfile', 'presence', 'Resume is required'],
+                    [ "[name='jobseeker[jobhear]']", 'presence', 'Please tell us how you heard about CareerTrackers']
+              ];
+
+        $( "#jobseeker-form" ).nod( metrics , {
+                          groupSelector: ".form-group",
+                          groupClass: "has-error",
+                          helpSpanDisplay: "help-block small"
+        });
+
+      }
+    });
+  </script>
+  {% endblock %}
+  <!--
+  {% block javascripts %}
+  <script type='text/javascript'>
+        function init_map(){
+
+          var myOptions = {zoom:17,center:new google.maps.LatLng(-37.8161054,144.9627163), mapTypeId: google.maps.MapTypeId.ROADMAP};
+          map = new google.maps.Map(document.getElementById('gmapm'),myOptions);
+          marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-37.8161054,144.9627163)});
+          infowindow = new google.maps.InfoWindow({content:'<strong>CareerSeekers Melbourne Office</strong><br>350 Collins Street, Melbourne, VIC 3000<br>'});
+          google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});
+          infowindow.open(map,marker);
+        }
+       google.maps.event.addDomListener(window, 'load', init_map);
+ </script>
+  {% endblock %}
+-->
+</div>
+{% endblock %}

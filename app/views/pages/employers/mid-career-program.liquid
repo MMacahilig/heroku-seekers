@@ -1,0 +1,49 @@
+---
+title: Mid-career Program
+slug: mid-career-program
+position: 1
+listed: true
+published: true
+is_layout: false
+seo_title: Mid-career Program
+editable_elements:
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Mid_Career_HW.png"
+  main/about_us_text: "<p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p>The
+    CareerSeekers <i>Mid-career Program</i> supports asylum seekers and refugees with\r\ntertiary
+    qualifications and some level of professional experience.  These individuals are
+    keen to reconnect with\r\ntheir careers and a twelve-week internship is the perfect
+    way for them to\r\nbecome acquainted with their profession in Australia. &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>Key
+    aspects of the CareerSeekers <i>Mid-career Program</i>:</p>\r\n\r\n<p>· &nbsp;\r\n&nbsp;
+    &nbsp; All\r\nparticipants have work rights</p>\r\n\r\n<p>· &nbsp;\r\n&nbsp;
+    &nbsp; Participants\r\ncan commence their internships at any time during the year</p>\r\n\r\n<p>·
+    &nbsp;\r\n&nbsp; &nbsp; Employers\r\ninterview each participant to ensure they
+    have the skills and attributes to be\r\nsuccessful in their internships</p>\r\n\r\n<p>·
+    &nbsp;\r\n&nbsp; &nbsp; Managers\r\nof interns receive <i>Working with Refugees</i>
+    training prior to the intern’s commencement.  Our team also provides support and
+    guidance\r\nto managers for the duration of the internship</p>\r\n\r\n<p>· &nbsp;\r\n&nbsp;
+    &nbsp; Interns\r\narrive for their first day of work after completing our extensive\r\npre-employment
+    training program</p>\r\n\r\n<p>· &nbsp;\r\n&nbsp; &nbsp; At the\r\nconclusion
+    of the internship, participants can either convert into ongoing\r\nfull-time employment
+    or enter the CareerSeekers post internship transition\r\nprogram where they are
+    supported into finding ongoing professional employment.</p>\r\n\r\n\r\n\r\n\r\n\r\n<br><p></p>"
+---
+{% extends parent %}
+{% block main %}
+{% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Mid_Career_HW.png'>
+</div>
+{% endif %}
+<div class='container-fluid'>
+  {% include page_header %}
+
+
+
+  <div class='col-lg-12'>
+    {{about_us_text}}
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+- Sydney:
+    _slug: sydney
+    location: Sydney
+    address: Nous House, 34/60 Margaret St, Sydney NSW 2000
+    mapid: gmapcanvas1
+    latitude: "-33.8647516,151.2068173"
+    description: "<strong>CareerSeekers Sydney Office</strong><br> 34/60 Margaret St,
+      Sydney, NSW 2000<br>"
+- Melbourne:
+    _slug: melbourne
+    location: Melbourne
+    address: Suite 8, Level 7 / 350 Collins Street, Melbourne, VIC 3000
+    mapid: gmapm
+    latitude: "-37.8161054,144.9627163"
+    description: "<strong>CareerSeekers Melbourne Office</strong><br>350 Collins Street,
+      Melbourne, VIC 3000<br>"

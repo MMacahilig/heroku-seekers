@@ -1,0 +1,6 @@
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='{{banner_url | escape}}'>
+</div>
+{% endif %}

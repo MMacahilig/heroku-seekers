@@ -1,0 +1,24 @@
+- Marta Beleke Sisay:
+    _slug: marta-beleke-sisay
+    student_name: Marta Beleke Sisay
+    origin: "<p>Refugee from Ethiopia<br></p>"
+    participant_stream: "<p>Student stream (La Trobe University)<br></p>"
+    company: "<p>Macquarie Group<br></p>"
+    url: "/images/Marta-2.png"
+    youtube_video_url: https://youtu.be/6HzuzFbhzEA
+- Rami Habeeb:
+    _slug: rami-habeeb
+    student_name: Rami Habeeb
+    origin: Refugee from Iraq
+    participant_stream: "Mid-career stream\r\n"
+    company: Ericsson
+    url: "/images/Rami-2.png"
+    youtube_video_url: https://youtu.be/XDYNKYgGuew
+- Titar Aprikian:
+    _slug: titar-aprikian
+    student_name: Titar Aprikian
+    origin: Refugee from Syria
+    participant_stream: Mid-career stream
+    company: TBC
+    url: "/images/Titar-2.png"
+    youtube_video_url: https://youtu.be/V5ovcURqdSQ

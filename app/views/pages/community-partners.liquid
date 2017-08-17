@@ -1,0 +1,70 @@
+---
+title: Community Partners
+slug: community-partners
+position: 6
+listed: false
+published: true
+is_layout: false
+seo_title: Community Partners
+editable_elements:
+  main/partners: "<p>We are active in the community and we are interested in partnering
+    with organisations who share our vision for the future of Indigenous Australians.</p>\r\n<p>CareerTrackers
+    proudly partner with the following organisations to continue their amazing work
+    and support more students during their transition to university.</p>"
+---
+{% extends parent %}
+
+{% block main %}
+
+{% include banner %}
+
+<div class='container-fluid'>
+
+  {% include page_header %}
+
+  <div class='container-fluid'>
+
+    {% editable_text 'partners' %}
+
+    <p>
+
+      Text about partners.
+
+    </p>
+
+    {% endeditable_text %}
+
+  </div>
+
+  {% for partner in contents.partners %}
+
+  <div class='container-fluid bottom-margin-large'>
+
+    <div class='col-lg-3 partner'>
+
+      <img alt='{{partner.name | escape}}' class='img-responsive' src='{{partner.image.url | escape}}'>
+
+    </div>
+
+    <div class='col-lg-9'>
+
+      <h4>{{partner.name | escape}}</h4>
+
+      <p>
+
+        {{partner.description | escape}}
+
+      </p>
+
+    </div>
+
+  </div>
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}
+
+
+

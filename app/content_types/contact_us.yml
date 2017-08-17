@@ -1,0 +1,44 @@
+name: Contact Us
+slug: contact_us
+description: CareerSrackers Offices
+label_field_name: location
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- location:
+    label: Location
+    type: string
+    required: true
+    localized: false
+- address:
+    label: Address
+    type: string
+    required: false
+    localized: false
+- phone:
+    label: Phone
+    type: string
+    required: false
+    localized: false
+- email:
+    label: Email
+    type: string
+    required: false
+    localized: false
+- mapid:
+    label: map_id
+    type: string
+    required: false
+    localized: false
+- latitude:
+    label: Latitude
+    type: string
+    required: false
+    localized: false
+- description:
+    label: Description
+    type: string
+    required: false
+    localized: false

@@ -1,0 +1,29 @@
+---
+name: Carousel
+description: Carousel text and images
+slug: carousel
+label_field_name: title
+order_by: manually
+order_direction: asc
+fields:
+- title:
+    label: Title
+    type: string
+    required: true
+    unique: false
+    localized: false
+- caption:
+    label: Caption
+    type: text
+    hint: Caption for the carousel image
+    required: true
+    unique: false
+    localized: false
+    text_formatting: text
+- image:
+    label: Image
+    type: text
+    hint: Carousel image url
+    required: true
+    unique: false
+    localized: false

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='content-type'>
+    <meta charset='utf-8'>
+    <title>
+      CareerSeekers Internship Program
+    </title>
+    <meta content='CareerSrackers' name='generator'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+
+              <meta name="csrf-param" content="authenticity_token">
+              <meta name="csrf-token" content="42zOEgq47i2Itqx5yAxc6Bas0ZwqYAYtGU6/vGjueSc=">
+
+    <link href="/images/logo.png" rel='shortcut icon'>
+    <link href="/sites/533a6766f92ea180dd000002/theme/stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="/sites/533a6766f92ea180dd000002/theme/stylesheets/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/styles.css" media="all" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/datepicker.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/sites/533a6766f92ea180dd000002/theme/stylesheets/bootstrapValidator.min.css" media="screen" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript" ></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id='fb-root'></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <header>
+  <div class='container-fluid white-background'>
+    <div class='row'>
+      <div class='col-md-7'>
+        <div class='row'>
+          <a href='/'>
+            <img class='inline-display img-responsive' src="/images/careerseekers-logo.png">
+          </a>
+        </div>
+      /*</div>
+      <div class='col-md-5'>
+        <div class='row padded-top'>
+          <div class='col-md-8'>
+            <ul class='list-unstyled contact'>
+              <li class='contact_phone'>
+                <i class='fa fa-phone'></i>
+                Main Office:
+                <a href='tel:+02 8090 5765'>02 8090 5765</a>
+              </li>*/
+              <b>
+              <li class='contact_email padded-top-small'>
+                <i class='fa fa-envelope'></i>
+                <a href='mailto:info@careerseekers.org.au'>info@careerseekers.org.au</a>
+              </li>
+              </b>
+            </ul>
+          </div>
+        </div>
+        <div class='row padded-top hidden-xs'>
+          <p class='lead padded-right col-md-12'>
+            We believe in the power of professional careers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class='navbar navbar-custom notrounded' role='navigation'>
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <button class='navbar-toggle' data-target='#bs-example-navbar-collapse-1' data-toggle='collapse' type='button'>
+          <span class='sr-only'>Toggle navigation</span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+      </div>
+      <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+        <ul class='nav navbar-nav'>
+          <li id="about-us-link" class="link first dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a><ul id="nav-about-us" class="dropdown-menu"><li id="overview-link" class="link first"><a href="/about-us/overview">Overview</a></li><li id="our-program-link" class="link "><a href="/about-us/our-program">Our Program</a></li><li id="our-board-link" class="link "><a href="/about-us/our-board">Our Board</a></li><li id="our-team-link" class="link "><a href="/about-us/our-team">Our Team</a></li><li id="our-model-link" class="link last"><a href="/about-us/our-model">Our Model</a></li></ul></li>
+<li id="students-link" class="link  dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Students <b class="caret"></b></a><ul id="nav-students" class="dropdown-menu"><li id="overview-link" class="link first"><a href="/students/overview">Overview</a></li><li id="how-it-works-link" class="link "><a href="/students/how-it-works">How It Works</a></li><li id="where-can-i-intern-link" class="link last"><a href="/students/where-can-i-intern">Where Can I Intern</a></li></ul></li>
+<li id="employers-link" class="link  dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Employers <b class="caret"></b></a><ul id="nav-employers" class="dropdown-menu"><li id="overview-link" class="link first"><a href="/employers/overview">Overview</a></li><li id="current-employment-partners-link" class="link last"><a href="/employers/current-employment-partners">Current Employment Partners</a></li></ul></li>
+<li id="universities-link" class="link "><a href="/universities">Universities</a></li>
+<li id="community-partners-link" class="link "><a href="/community-partners">Community Partners</a></li>
+<li id="alumni-link" class="link "><a href="/alumni">Alumni</a></li>
+<li id="forms-link" class="link "><a href="/forms">Forms</a></li>
+<li id="contact-us-link" class="link last"><a href="/contact-us">Contact Us</a></li>
+        </ul>
+        <ul class='nav navbar-nav navbar-right visible-lg'>
+          <li>
+            <a class='social-media-icons' href='https://www.facebook.com/CareerSeekers-New-Australian-Internship-Program-878407625570190' target='_blank'>
+              <span class='fa-stack fa-lg'>
+                <i class='fa fa-square-o fa-stack-2x'></i>
+                <i class='fa fa-facebook fa-stack-1x'></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class='social-media-icons' href='https://twitter.com/CareerTrackers' target='_blank'>
+              <span class='fa-stack fa-lg'>
+                <i class='fa fa-square-o fa-stack-2x'></i>
+                <i class='fa fa-twitter fa-stack-1x'></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class='social-media-icons' href='https://https://www.youtube.com/channel/UCZ7zXWMlTvRmxE4ISZx2tbQ' target='_blank'>
+              <span class='fa-stack fa-lg'>
+                <i class='fa fa-square-o fa-stack-2x'></i>
+                <i class='fa fa-youtube fa-stack-1x'></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+<div class='jumbotron'>
+  <h1>Page not found</h1>
+</div>
+
+    <footer>
+  <div class='container-fluid'>
+    <div class='container marketing white-background'>
+      <hr class='divider'>
+      <p class='pull-right'>
+        <a href='#'>Back to top</a>
+      </p>
+      <p>
+        © 2016 CareerSeekers
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+    <script src="/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap.min.js" type="text/javascript" ></script>
+    <script src="/javascripts/bootstrap-datepicker.js" type="text/javascript" ></script>
+    <script src="/sites/533a6766f92ea180dd000002/theme/javascripts/docs.min.js" type="text/javascript" ></script>
+    <script src="/javascripts/player.js" type="text/javascript" ></script>
+    <script src="/sites/533a6766f92ea180dd000002/theme/javascripts/nod.min.js" type="text/javascript" ></script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-49035951-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      $(document).ready(function() {
+        $('.date').datepicker({
+          format: "dd/mm/yyyy",
+          todayBtn: "linked",
+          autoclose: true,
+          todayHighlight: true
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        if ($( "#students-form" ).length) {
+          var metrics = [
+                        [ "[name='students[last_name]']", 'presence', 'Last name is required' ],
+                        [ "[name='students[first_name]']", 'presence', 'First name is required' ],
+                        [ "[name='students[email]']", 'presence', 'Email address is required' ],
+                        [ "[name='students[email]']", 'email', 'Invalid email address' ],
+                        [ "[name='students[phone]']", 'presence', 'Phone is required' ],
+                        [ "[name='students[degree]']", 'presence', 'Degree is required' ],
+
+                      ];
+
+          $( "#students-form" ).nod( metrics , {
+                            groupSelector: ".form-group",
+                            groupClass: "has-error",
+                            helpSpanDisplay: "help-block small"
+          });
+        }
+
+        if ($( "#employers-form" ).length) {
+          var metrics = [
+                        [ "[name='employer[name]']", 'presence', 'Name is required' ],
+                        [ "[name='employer[company]']", 'presence', 'Company name is required' ],
+                        [ "[name='employer[email]']", 'presence', 'Email address is required' ],
+                        [ "[name='employer[email]']", 'email', 'Invalid email address' ],
+                        [ "[name='employer[phone]']", 'presence', 'Phone is required' ],
+
+                      ];
+
+          $( "#employers-form" ).nod( metrics , {
+                            groupSelector: ".form-group",
+                            groupClass: "has-error",
+                            helpSpanDisplay: "help-block small"
+          });
+        }
+      });
+    </script>
+
+  </body>
+</html>

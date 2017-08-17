@@ -1,0 +1,53 @@
+---
+name: Team members
+description: Team members
+slug: team_members
+label_field_name: name
+order_by: manually
+order_direction: asc
+fields:
+- name:
+    label: Name
+    type: string
+    required: true
+    unique: false
+    localized: false
+- position:
+    label: Position
+    type: string
+    required: true
+    unique: false
+    localized: false
+- email:
+    label: Email
+    type: string
+    required: true
+    unique: false
+    localized: false
+- image:
+    label: Image
+    type: file
+    required: false
+    unique: false
+    localized: false
+- url:
+    label: url
+    type: string
+    required: true
+    unique: false
+    localized: false
+- location:
+    label: Location
+    type: belongs_to
+    required: true
+    unique: false
+    localized: false
+    class_name: team_locations
+    ui_enabled: true
+- description:
+    label: Description
+    type: text
+    required: true
+    unique: false
+    localized: false
+    text_formatting: text

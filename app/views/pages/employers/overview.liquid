@@ -1,0 +1,58 @@
+---
+title: Overview
+slug: overview
+position: 0
+listed: true
+published: true
+is_layout: false
+seo_title: Overview
+editable_elements:
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Gala_Dinner.png"
+  main/about_us_image: ''
+  main/about_us_text: "<p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p>CareerSeekers
+    is a program, not a\r\nplacement.  Our program offers ongoing\r\nsupport to interns,
+    their managers and other stakeholders.  Core to our philosophy of success is\r\nrecognising
+    the challenges many asylum seekers and refugees face as they enter\r\nthe Australian
+    workforce for the first time. \r\nEqually, targeted employment of asylum seekers
+    and refugees is new to\r\nmany organisations.  With this in mind we\r\noffer comprehensive
+    support before, during and post internship. &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>All
+    CareerSeekers participants have work\r\nrights to obtain employment in Australia.
+    &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>Below is what you can expect as an employment\r\npartner
+    of CareerSeekers:&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p><b>Preparation</b>:  The
+    basis of CareerSeekers is\r\nto ensure both the intern and the workplace are prepared.
+    \ For interns, they receive comprehensive\r\npre-employment training before arriving
+    for the first day of their\r\ninternship.  Our training program is\r\ndesigned
+    and delivered by professionals who know what it takes to build a\r\ncareer
+    in Australia.  &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p><b>Support</b>:  Managers of
+    interns receive\r\nongoing support whilst hosting an intern. \r\nWe facilitate
+    <i>Working with Refugees</i>\r\ntraining to the team hosting the intern. \r\nDuring
+    the first week of the internship, one of our team members\r\nfacilitates a session
+    to establish internship objectives with the intern and\r\nhis or her manager.  Over
+    the course of\r\nthe internship, we have scheduled check-ins with managers, to
+    stay on top of\r\nthe intern’s progress. &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p><b>Social\r\nImpact:</b>&nbsp;
+    Ultimately\r\nyour participation in CareerSeekers is driving tangible social impact.
+    \ Providing an internship allows our participants\r\nthe chance to rebuild their
+    confidence and provides meaningful income to the\r\nintern’s household.  Your
+    staff will grow\r\nand develop during the internship.  Being\r\na mentor to an
+    asylum seeker or refugee affords the opportunity to share skills\r\nand gain deeper
+    insight into the topic of asylum seekers and refugees.</p>\r\n\r\n\r\n\r\n\r\n\r\n<br><p></p>"
+---
+{% extends parent %}
+{% block main %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Gala_Dinner.png'>
+</div>
+{% endif %}
+<div class='container-fluid'>
+  {% include page_header %}
+  {% capture 'about_us_image' %}{% editable_file 'about_us_image' %}{% endeditable_file %}{% endcapture %}
+  {% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+
+  <div class='col-lg-12'>
+    {{about_us_text}}
+  </div>
+
+</div>
+{% endblock %}

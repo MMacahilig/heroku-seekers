@@ -1,0 +1,22 @@
+name: Internships
+slug: internships
+label_field_name: company
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- company:
+    label: company
+    type: belongs_to
+    required: true
+    hint: Company
+    localized: false
+    target: companies
+    ui_enabled: true
+- positions:
+    label: positions
+    type: tags
+    required: true
+    hint: Internship Positions
+    localized: false

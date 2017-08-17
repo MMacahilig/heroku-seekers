@@ -1,0 +1,647 @@
+---
+title: Tax File Number Declaration
+slug: tfn-declaration
+position: 105
+listed: false
+published: true
+is_layout: false
+seo_title: Tax File Number Declaration
+---
+{% extends parent %}
+{% block main %}
+<div class='container-fluid'>
+  {% include page_header %}
+  <div class='progress'>
+    <div aria-valuemax='100' aria-valuemin='0' aria-valuenow='60' class='progress-bar' role='progressbar' style='width: 60%;'>
+      <span class='sr-only'>60% Complete</span>
+    </div>
+  </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	  	$(document).ready(function(){
+    		$('input').keyup(function(){
+        		if($(this).val().length==$(this).attr("maxlength")){
+            		$(this).next().focus();
+        		}
+    		});
+		});
+
+	</script>
+  <form action='/interns/tfn' class='form-horizontal' method='POST' role='form'>
+    {% assign intern = session['intern'] %}
+    {% assign ics = session['ics'] %}
+    {% assign bank = session['bank'] %}
+    {% assign tfn = session['tfn'] %}
+    {% csrf_param %}
+    <div class='light-background padded-top padded-bottom bottom-margin-medium'>
+      <fieldset>
+        <h4 class='col-sm-12'>
+          1. What is your tax file number (TFN)?
+        </h4>
+        <div class='form-group'></div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='tax'>Tax File Number</label>
+          <div class='col-sm-5'>
+            {% assign tax_option = params['tax_option'] %}
+            <div class='radio'>
+              <label>
+                {% if tax_option == 'tax_option_4' %}
+                <input checked='checked' disabled='' name='tfn[tax_option]' type='radio' value='tax_option_4'>
+                {% else %}
+                <input checked= 'checked' disabled='' name='tfn[tax_option]' type='radio' value='tax_option_4'>
+                {% endif %}
+                <strong></strong>
+                I have a Tax File Number
+              </label>
+            </div>
+            <div class='input-group'>
+
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_1]' type='text' value="{%if params['tax_1']%}{{params['tax_1']}}{%else%}{{bank['tax_1']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_2]' type='text' value="{%if params['tax_2']%}{{params['tax_2']}}{%else%}{{bank['tax_2']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_3]' type='text' value="{%if params['tax_3']%}{{params['tax_3']}}{%else%}{{bank['tax_3']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_4]' type='text' value="{%if params['tax_4']%}{{params['tax_4']}}{%else%}{{bank['tax_4']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_5]' type='text' value="{%if params['tax_5']%}{{params['tax_5']}}{%else%}{{bank['tax_5']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_6]' type='text' value="{%if params['tax_6']%}{{params['tax_6']}}{%else%}{{bank['tax_6']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_7]' type='text' value="{%if params['tax_7']%}{{params['tax_7']}}{%else%}{{bank['tax_7']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_8]' type='text' value="{%if params['tax_8']%}{{params['tax_8']}}{%else%}{{bank['tax_8']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[tax_9]' type='text' value="{%if params['tax_9']%}{{params['tax_9']}}{%else%}{{bank['tax_9']}}{%endif%}">
+            </div>
+            <div class='radio'>
+              <label>
+                {% if tax_option == 'tax_option_1' %}
+                <input checked='checked' disabled='' name='tfn[tax_option]' type='radio' value='tax_option_1'>
+                {% else %}
+                <input name='tfn[tax_option]' disabled='' type='radio' value='tax_option_1'>
+                {% endif %}
+                <strong>
+                  OR
+                </strong>
+                I have made a separate application/enquiry to the ATO for a new or existing TFN.
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if tax_option == 'tax_option_2' %}
+                <input checked='checked' disabled='' name='tfn[tax_option]' type='radio' value='tax_option_2'>
+                {% else %}
+                <input name='tfn[tax_option]' disabled='' type='radio' value='tax_option_2'>
+                {% endif %}
+                <strong>
+                  OR
+                </strong>
+                I am claiming an exemption because I am under 18 years of age and do not earn enough to pay tax.
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if tax_option == 'tax_option_3' %}
+                <input checked='checked' name='tfn[tax_option]' disabled='' type='radio' value='tax_option_3'>
+                {% else %}
+                <input name='tfn[tax_option]' type='radio' disabled='' value='tax_option_3'>
+                {% endif %}
+                <strong>
+                  OR
+                </strong>
+                I am claiming an exemption because I am in receipt of a pension, benefit or allowance.
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          2. What is your name?
+        </h4>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='title'>Title</label>
+          <div class='col-sm-5'>
+            {% assign title = params['title'] %}
+            <div class='radio'>
+              <label>
+                {% if title == 'mr' %}
+                <input checked='checked' name='tfn[title]' type='radio' value='mr'>
+                {% else %}
+                <input name='tfn[title]' type='radio' value='mr'>
+                {% endif %}
+                Mr.
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if title == 'mrs' %}
+                <input checked='checked' name='tfn[title]' type='radio' value='mrs'>
+                {% else %}
+                <input name='tfn[title]' type='radio' value='mrs'>
+                {% endif %}
+                Mrs.
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if title == 'miss' %}
+                <input checked='checked' name='tfn[title]' type='radio' value='miss'>
+                {% else %}
+                <input name='tfn[title]' type='radio' value='miss'>
+                {% endif %}
+                Miss
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if title == 'ms' %}
+                <input checked='checked' name='tfn[title]' type='radio' value='ms'>
+                {% else %}
+                <input name='tfn[title]' type='radio' value='ms'>
+                {% endif %}
+                Ms.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class='form-group no-margin-bottom'>
+          <label class='col-sm-3 control-label' for='last_name'>Surname or family name</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='last_name' name='tfn[last_name]' placeholder='Surname or family name' type='text' value="{%if params['last_name']%}{{params['last_name']}}{%else%}{{intern['last_name']}}{%endif%}">
+          </div>
+        </div>
+        <div class='form-group no-margin-bottom'>
+          <label class='col-sm-3 control-label' for='first_name'>First given name</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='first_name' name='tfn[first_name]' placeholder='First given name' type='text' value="{%if params['first_name']%}{{params['first_name']}}{%else%}{{intern['first_name']}}{%endif%}">
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='given'>Other given names</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='given' name='tfn[given_names]' placeholder='Other given names' type='text' value="{{params['given_names']}}">
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          3. If you have changed your name since you last dealt with the ATO,
+          <br>
+          show your previous family name
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            <input class='form-control' id='previous_name' name='tfn[previous_name]' type='text' value="{{params['previous_name']}}">
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          4. What is your date of birth?
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            <input class='date form-control' maxlength='10' name='tfn[dob]' required='' type='text' value="{%if params['dob']%}{{params['dob']}}{%else%}{{intern['dob']}}{%endif%}">
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          5. What is your home address in Australia?
+        </h4>
+        <div class='form-group no-margin-bottom'>
+          <label class='col-sm-3 control-label' for='home_address_1'>Home Address</label>
+          <div class='col-sm-5 input-vertical-group'>
+            <input class='form-control' id='home_address_1' name='tfn[home_address_1]' placeholder='Home Address' type='text' value="{%if params['home_address_1']%}{{params['home_address_1']}}{%else%}{{ics['residential_address_1']}}{%endif%}">
+            <input class='form-control' id='home_address_2' name='tfn[home_address_2]' type='text' value="{{params['home_address_2']}}">
+          </div>
+        </div>
+        <div class='form-group no-margin-bottom'>
+          <label class='col-sm-3 control-label' for='suburb'>Suburb or town</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='first_name' name='tfn[suburb]' placeholder='Suburb or town' type='text' value="{%if params['suburb']%}{{params['suburb']}}{%else%}{{ics['residential_address_2']}}{%endif%}">
+          </div>
+        </div>
+        <div class='form-group no-margin-bottom'>
+          <label class='col-sm-3 control-label' for='state'>State/territory</label>
+          <div class='col-sm-5'>
+            <div class='input-group'>
+            {% if ics[residential_address_3] == "NSW" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="N">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="S">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="W">
+            {% elsif ics[residential_address_3] == "VIC" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="V">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="I">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="C">
+            {% elsif ics[residential_address_3] == "QLD" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="Q">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="L">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="D">
+            {% elsif ics[residential_address_3] == "SA" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="S">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="A">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="">
+            {% elsif ics[residential_address_3] == "TAS" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="T">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="A">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="S">
+            {% elsif ics[residential_address_3] == "WA" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="W">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="A">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="">
+            {% elsif ics[residential_address_3] == "ACT" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="A">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="C">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="T">
+            {% elsif ics[residential_address_3] == "NT" %}
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="N">
+            	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="T">
+              	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="">
+            {% else %}
+              	<input class='digit-box form-control' maxlength='1' name='tfn[state_1]' type='text' value="">
+              	<input class='digit-box form-control' maxlength='1' name='tfn[state_2]' type='text' value="">
+              	<input class='digit-box form-control' maxlength='1' name='tfn[state_3]' type='text' value="">
+            {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='post'>Postcode</label>
+          <div class='col-sm-5'>
+            <div class='input-group'>
+              <input class='digit-box form-control' maxlength='1' name='tfn[post_1]' type='text' value="{%if params['post_1']%}{{params['post_1']}}{%else%}{{ics['residential_post_1']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[post_2]' type='text' value="{%if params['post_2']%}{{params['post_2']}}{%else%}{{ics['residential_post_2']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[post_3]' type='text' value="{%if params['post_3']%}{{params['post_3']}}{%else%}{{ics['residential_post_3']}}{%endif%}">
+              <input class='digit-box form-control' maxlength='1' name='tfn[post_4]' type='text' value="{%if params['post_4']%}{{params['post_4']}}{%else%}{{ics['residential_post_4']}}{%endif%}">
+            </div>
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          6. On what basis are you paid?
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            {% assign paid = params['paid'] %}
+            <div class='radio'>
+              <label>
+                {% if paid == 'full-time' %}
+                <input checked='checked' name='tfn[paid]' type='radio' value='full-time'>
+                {% else %}
+                <input name='tfn[paid]' disabled='' type='radio' value='full-time'>
+                {% endif %}
+                Full-time employment
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if paid == 'part-time' %}
+                <input checked='checked' name='tfn[paid]' type='radio' value='part-time'>
+                {% else %}
+                <input disabled='' name='tfn[paid]' type='radio' value='part-time'>
+                {% endif %}
+                Part-time employment
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if paid == 'labour' %}
+                <input checked='checked' name='tfn[paid]' type='radio' value='labour'>
+                {% else %}
+                <input disabled='' name='tfn[paid]' type='radio' value='labour'>
+                {% endif %}
+                Labour hire
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if paid == 'super' %}
+                <input checked='checked' name='tfn[paid]' type='radio' value='super'>
+                {% else %}
+                <input disabled='' name='tfn[paid]' type='radio' value='super'>
+                {% endif %}
+                Superannuation income stream
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if paid == 'casual' %}
+                <input checked='checked' name='tfn[paid]' type='radio' value='casual'>
+                {% else %}
+                <input disabled='' checked='checked' name='tfn[paid]' type='radio' value='casual'>
+                {% endif %}
+                Casual employment
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          7. Are you an Australian resident for tax purposes?
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            {% assign resident = params['resident'] %}
+            <div class='radio'>
+              <label>
+                {% if resident == 'yes' %}
+                <input checked='checked' name='tfn[resident]' type='radio' value='yes'>
+                {% else %}
+                <input name='tfn[resident]' type='radio' value='yes'>
+                {% endif %}
+                Yes
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if resident == 'no' %}
+                <input checked='checked' name='tfn[resident]' type='radio' value='no'>
+                {% else %}
+                <input name='tfn[resident]' type='radio' value='no'>
+                {% endif %}
+                No (You must answer
+                <strong>
+                  No
+                </strong>
+                at question 8.)
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class='hide-form'>
+       <hr class='darker-hr'>
+
+        <h4 class='col-sm-12'>
+          8. Do you want to claim the tax-free threshold from this payer?
+        </h4>
+        <div class='form-group'>
+
+          <div class='col-sm-5 col-sm-offset-3'>
+            If you have more than one source of income and currently claim the tax-free threshold from another payer,
+            <strong>
+              do not
+            </strong>
+            claim it now.
+          </div>
+          <div class='col-sm-5 col-sm-offset-3'>
+            {% assign threshold = params['threshold'] %}
+            <div class='radio'>
+              <label>
+                {% if threshold == 'yes' %}
+                <input checked='checked' disabled='' name='tfn[threshold]' type='radio' value='yes'>
+                {% else %}
+                <input name='tfn[threshold]'disabled='' type='radio' value='yes'>
+                {% endif %}
+                Yes
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if threshold == 'no' %}
+                <input checked='checked' disabled='' name='tfn[threshold]' type='radio' value='no'>
+                {% else %}
+                <input name='tfn[threshold]' checked='checked' disabled='' type='radio' value='no'>
+                {% endif %}
+                No (Answer
+                <strong>
+                  No
+                </strong>
+                at questions 9 and 10 unless you are a foreign resident claiming a senior Australians, zone or overseas forces tax offset.)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class='form-group hide-form'>
+          			<label class='col-sm-3 control-label' for='blank_space'>
+          			</label>
+          			<div class='col-sm-5'>
+          			</div>
+        </div>
+        <div class='form-group hide-form'>
+          			<label class='col-sm-3 control-label' for='blank_space'>
+          			</label>
+          			<div class='col-sm-5'>
+          			</div>
+        </div>
+        <div class='form-group hide-form'>
+          			<label class='col-sm-3 control-label' for='blank_space'>
+          			</label>
+          			<div class='col-sm-5'>
+          			</div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          9. Do you want to claim the senior Australians tax offset by reducing the amount withheld from payments made to you?
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            If you have more than one source of income and currently claim the tax-free threshold from another payer,
+            <strong>
+              do not
+            </strong>
+            claim it now.
+          </div>
+          <div class='col-sm-5 col-sm-offset-3'>
+            {% assign seniors = params['seniors'] %}
+            <div class='radio'>
+              <label>
+                {% if seniors == 'yes' %}
+                <input checked='checked' name='tfn[seniors]' type='radio' value='yes'>
+                {% else %}
+                <input name='tfn[seniors]' type='radio' value='yes'>
+                {% endif %}
+                Yes
+                <br>
+                (Complete a
+                <em>
+                  Withholding declaration
+                </em>
+                (NAT 3093), but only if you are claiming the tax-free threshold from this payer.
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if seniors == 'no' %}
+                <input checked='checked' name='tfn[seniors]' type='radio' value='no'>
+                {% else %}
+                <input name='tfn[seniors]' checked='checked' type='radio' value='no'>
+                {% endif %}
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          10. Do you want to claim a zone, overseas forces, dependent spouse or special tax offset by reducing the amount withheld from payments made to you?
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            {% assign zone =  params['zone'] %}
+            <div class='radio'>
+              <label>
+                {% if zone == 'yes' %}
+                <input checked='checked' name='tfn[zone]' type='radio' value='yes'>
+                {% else %}
+                <input name='tfn[zone]' type='radio' value='yes'>
+                {% endif %}
+                Yes
+                <br>
+                (Complete a
+                <em>
+                  Withholding declaration
+                </em>
+                (NAT 3093))
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if zone == 'no' %}
+                <input checked='checked' name='tfn[zone]' type='radio' value='no'>
+                {% else %}
+                <input name='tfn[zone]' checked='checked' type='radio' value='no'>
+                {% endif %}
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          11. (a) Do you have an accumulated Higher Education Loan Program (HELP) debt?
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            {% assign help = params['help'] %}
+            <div class='radio'>
+              <label>
+                {% if help == 'yes' %}
+                <input checked='checked' name='tfn[help]' type='radio' value='yes'>
+                {% else %}
+                <input name='tfn[help]' type='radio' value='yes'>
+                {% endif %}
+                Yes
+                <br>
+                (Your payer will withhold additional amounts to cover any compulsory repayments that may be raised on your notice of assessment.)
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if help == 'no' %}
+                <input checked='checked' name='tfn[help]' type='radio' value='no'>
+                {% else %}
+                <input name='tfn[help]' type='radio' value='no'>
+                {% endif %}
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          11. (b) Do you have an accumulated Financial Supplement debt?
+        </h4>
+        <div class='form-group'>
+          <div class='col-sm-5 col-sm-offset-3'>
+            {% assign financial = params['financial'] %}
+            <div class='radio'>
+              <label>
+                {% if financial == 'yes' %}
+                <input checked='checked' name='tfn[financial]' type='radio' value='yes'>
+                {% else %}
+                <input name='tfn[financial]' type='radio' value='yes'>
+                {% endif %}
+                Yes
+                <br>
+                (Your payer will withhold additional amounts to cover any compulsory repayments that may be raised on your notice of assessment.)
+              </label>
+            </div>
+            <div class='radio'>
+              <label>
+                {% if financial == 'no' %}
+                <input checked='checked' name='tfn[financial]' type='radio' value='no'>
+                {% else %}
+                <input name='tfn[financial]' type='radio' value='no'>
+                {% endif %}
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr class='darker-hr'>
+        <h4 class='col-sm-12'>
+          Declaration by payee:
+        </h4>
+        <div class='col-sm-9 col-sm-offset-3'>
+          I declare that the information I have given is true and correct.
+        </div>
+        <div class='form-group no-margin-bottom'>
+          <label class='col-sm-3 control-label' for='signature'>
+            Signature
+            <div class='small normal-font-weight'>
+              (Type your full name)
+            </div>
+          </label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='signature' name='tfn[signature]' type='text' value="{{params['signature']}}">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class='row'>
+      <div class='col-sm-12'>
+        <div class='form-group'>
+          <div class='col-sm-2 pull-right'>
+          	<button class='btn orange-button' type='button' VALUE="Back" onClick="history.go(-1);return true;">Back</button>
+            <button class='btn orange-button' type='submit'>Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+{% block javascripts %}
+<script>
+  $(document).ready(function() {
+    var i = 0;
+    var metrics = [
+                    [ "[name='tfn[tax_1]'], [name='tfn[tax_2]'], [name='tfn[tax_3]'], [name='tfn[tax_4]'], [name='tfn[tax_5]'], [name='tfn[tax_6]'], [name='tfn[tax_7]'], [name='tfn[tax_8]'], [name='tfn[tax_9]']",function(x){
+                        if ($("[name='tfn[tax_option]']:checked").val() == 'tax_option_4') {
+                          return x != ''
+                        }
+                        return true;
+                    }, 'Tax File Number is required and cannot be empty'],
+
+                    [ "[name='tfn[tax_option]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[title]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[dob]']", 'presence', 'Date of birth is required and cannot be empty' ],
+                    [ "[name='tfn[last_name]']", 'presence', 'Surname or family name is required and cannot be empty' ],
+                    [ "[name='tfn[first_name]']", 'presence', 'First given name is required and cannot be empty' ],
+                    [ "[name='tfn[home_address_1]'], [name='tfn[home_address_2]']", 'one-of', 'Home address is required and cannot be empty' ],
+                    [ "[name='tfn[suburb]']", 'presence', 'Suburb or town is required and cannot be empty' ],
+                    [ "[name='tfn[state_3]']", 'one-of', 'State/territory is required' ],
+                    [ "[name='tfn[post_1]'], [name='tfn[post_2]'], [name='tfn[post_3]'], [name='tfn[post_4]']", 'one-of', 'Postcode is required' ],
+                    [ "[name='tfn[paid]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[resident]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[threshold]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[seniors]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[zone]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[help]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[financial]']", 'presence', 'Please choose one of the following' ],
+                    [ "[name='tfn[signature]']", 'presence', 'Signature is required and cannot be empty' ],
+                    [ "[name='tfn[dob]']", /|(0[1-9]|[12][0-9]|3[01])[\/.](0[1-9]|1[012])[\/.](19|20)\d\d/, 'Invalid date format. Should be dd/mm/yyyy' ]
+                  ];
+    $("[name='tfn[tax_option]']").change(function(){
+      $("[name='tfn[tax_1]']").change();
+      $("[name='tfn[tax_2]']").change();
+      $("[name='tfn[tax_3]']").change();
+      $("[name='tfn[tax_4]']").change();
+      $("[name='tfn[tax_5]']").change();
+      $("[name='tfn[tax_6]']").change();
+      $("[name='tfn[tax_7]']").change();
+      $("[name='tfn[tax_8]']").change();
+      $("[name='tfn[tax_9]']").change();
+    });
+    $( "form" ).nod( metrics , {
+                      groupSelector: ".form-group",
+                      groupClass: "has-error",
+                      helpSpanDisplay: "help-block small",
+    });
+  });
+</script>
+{% endblock %}
+

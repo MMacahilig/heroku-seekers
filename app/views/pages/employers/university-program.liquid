@@ -1,0 +1,53 @@
+---
+title: University Program
+slug: university-program
+position: 2
+listed: true
+published: true
+is_layout: false
+seo_title: University Program
+editable_elements:
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Hafiza.png"
+  main/about_us_text: "<p>Many asylum seekers and refugees arrive in\r\nAustralia
+    at an early age.  They complete\r\ntheir schooling and have the ambition to participate
+    in further studies.  As they may be the first in their family to\r\nnavigate tertiary
+    education and professional employment, the CareerSeekers\r\nuniversity program
+    is key in helping many young asylum seekers and refugees\r\nachieve their goals.
+    &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>As university students, participants\r\nundertake
+    their internships during university breaks and sometimes work\r\nyear-round as
+    they near the end of their degree.  The program is designed for students to\r\nreturn
+    to their workplace each year while completing their degree.  Ultimately we want
+    to see interns convert\r\ninto full-time graduate employment at the completion
+    of their studies.&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>Key aspects of the CareerSeekers
+    <i>University\r\nProgram</i>:&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>· &nbsp; &nbsp; &nbsp;
+    All participants have work rights</p>\r\n\r\n<p>· &nbsp; &nbsp; &nbsp; Students
+    study full-time during the semester and work full-time\r\nduring university breaks
+    with the aim of returning each year of their degree</p>\r\n\r\n<p>· &nbsp; &nbsp;
+    &nbsp; Interns participate in year-round leadership training aligned to the\r\nCareerSeekers
+    program</p>\r\n\r\n<p>· &nbsp; &nbsp; &nbsp; Employers interview each participant
+    to ensure they have the skills\r\nand attributes to be successful in their internships</p>\r\n\r\n<p>·
+    &nbsp; &nbsp; &nbsp; Managers of interns receive working with refugee training
+    prior to\r\nthe interns commencement.  Our team also\r\nprovides support and guidance
+    to managers for the duration of the internship to\r\nanswer any questions</p>\r\n\r\n<p>·
+    &nbsp; &nbsp; &nbsp; Interns arrive for their first day of work after completing
+    our\r\nextensive pre-employment training program</p>\r\n\r\n<p></p>"
+---
+{% extends parent %}
+{% block main %}
+  {% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+  {% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+  {% if banner_url != '' %}
+  <div class='banner visible-lg visible-md'>
+    <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Hafiza.png'>
+  </div>
+  {% endif %}
+<div class='container-fluid'>
+  {% include page_header %}
+
+
+  <div class='col-lg-12'>
+    {{about_us_text}}
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+---
+title: Overview
+slug: overview
+position: 1
+listed: true
+published: true
+is_layout: false
+seo_title: Overview
+editable_elements:
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Asma.png"
+  main/about_us_text: "<p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p></p><div
+    class=\"PD IF\"><div class=\"JL\"><div class=\"Mu SP\" data-tooltip=\"September
+    6, 2016 at 1:27:10 PM UTC+10\">CareerSeekers is non-profit social enterprise that works with leading organisations to create employment opportunities for asylum seekers and refugees who aspire to obtain professional employment.
+    </div></div></div><p></p>\r\n\r\n<p></p>\r\n\r\n
+    <p>Our program supports two distinct groups of asylum seekers and refugees:&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n
+    <p>Mid-career Professionals – those with\r\ntertiary qualifications and professional work experience
+    who strive to\r\nre-establish their careers in Australia. \r\nThese participants
+    undertake paid internships lasting twelve weeks that\r\nprovide local experience,
+    a local reference and help them establish a network\r\nwithin their chosen profession.</p>\r\n\r\n\r\n\r\n<p>University
+    students - full-time university\r\nstudents who undertake paid internships during
+    university breaks in an effort\r\nto link their studies with practical work experience.
+    The CareerSeekers\r\nuniversity program aligns to existing corporate internship
+    programs.&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>CareerSeekers is endorsed as an Item
+    1\r\nDeductible Gift Recipient organisation.</p><p></p>"
+---
+{% include header2 %}
+{% block main %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<!--
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Asma.png'>
+</div>
+-->
+
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/cs-banner-0.png'>
+</div>
+{% endif %}
+<div class='container-fluid'>
+  {% include page_header %}
+
+  {% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+
+  <div class='col-lg-12'>
+    {{about_us_text}}
+  </div>
+
+</div>
+{% endblock %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACu7936Ft2gKVaG9vHlx8IL_QTdS1pHbE&callback=initMap"
+                async defer></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+        <script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap.min.js" type="text/javascript" ></script>
+        <script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap-datepicker.js" type="text/javascript" ></script>
+        <script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/docs.min.js" type="text/javascript" ></script>
+        <script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/player.js" type="text/javascript" ></script>
+        <script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/nod.min.js" type="text/javascript" ></script>
+        <script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/spin.js" type="text/javascript" ></script>
+        <script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/jquery.fullPage.js" type="text/javascript" ></script>

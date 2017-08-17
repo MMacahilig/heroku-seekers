@@ -1,0 +1,27 @@
+name: Companies
+slug: companies
+description: Companies involved with CareerSeekers
+label_field_name: name
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- name:
+    label: Name
+    type: string
+    required: true
+    hint: Company Name
+    localized: false
+- image:
+    label: Image
+    type: file
+    required: false
+    hint: Company Logo
+    localized: false
+- url:
+    label: url
+    type: String
+    required: true
+    hint: Company Logo url
+    localized: false

@@ -1,0 +1,26 @@
+---
+title: Terms and Conditions
+slug: terms
+position: 10
+listed: false
+published: true
+is_layout: false
+seo_title: Terms and Conditions
+editable_elements:
+  main/terms and conditions: |-
+    <p>
+        Something here.
+      </p>
+---
+{% extends parent %}
+{% block main %}
+<div class='container-fluid'>
+  {% include page_header %}
+  {% editable_text 'terms and conditions' %}
+  <p>
+    Something here.
+  </p>
+  {% endeditable_text %}
+</div>
+{% endblock %}
+

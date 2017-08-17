@@ -1,0 +1,109 @@
+---
+title: University Students
+slug: university-students
+position: 2
+listed: true
+published: true
+is_layout: false
+seo_title: University Students
+editable_elements:
+  main/about_us_text: "<p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p>We
+    partner with leading organisations to create paid\r\ninternships for full-time
+    university students who are asylum seekers or\r\nrefugees. Internships provide
+    industry experience and insight into career\r\noptions – both of which are important
+    in making a smooth transition from\r\nuniversity to employment.</p>\r\n\r\n\r\n\r\n<p>Internships
+    are suitable for students in the early years\r\nof their degree, who are studying
+    courses that don’t typically require a\r\nmandatory placement. Internships last
+    twelve weeks and are completed over the\r\nsummer university break, or split between
+    the winter and summer university\r\nbreaks.&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>There
+    is no fee to be involved, however participants need\r\nto actively participate
+    in the program and attend all workshops and events. &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>Currently,
+    the program is open to students who meet the\r\nfollowing criteria:&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>●
+    &nbsp; &nbsp; \r\nAsylum seeker or refugee enrolled in\r\nfull-time tertiary studies</p>\r\n\r\n<p>●
+    &nbsp; &nbsp; \r\nAttending university in Melbourne or\r\nSydney</p>\r\n\r\n<p>●
+    &nbsp; &nbsp; \r\nCompleting one of the following\r\ndegrees:  Science, Engineering
+    (all\r\ntypes), Commerce / Business (all majors), Information Technology, Mathematics,\r\nLaw,
+    Arts</p>\r\n\r\n\r\n\r\n\r\n\r\n<br><p></p>"
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Student1.png"
+---
+{% extends parent %}
+{% block main %}
+{% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Student1.png'>
+</div>
+{% endif %}
+<div class='container-fluid'>
+  {% include page_header %}
+  {% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+
+  <div class='col-lg-12'>
+    <p>
+We partner with leading organisations to create paid internships for full-time university students who are asylum seekers or refugees. Internships provide industry experience and insight into career options – both of which are important in making a smooth transition from university to employment.<br><br>
+
+Internships are suitable for students in the early years of their degree, who are studying courses that don’t typically require a mandatory placement. Internships last twelve weeks and are completed over the summer university break, or split between the winter and summer university breaks.<br><br>
+
+There is no cost to participate, however students need to actively participate in the program and attend all workshops and events. <br><br>
+
+Currently, the program is open to students who meet the following criteria:<br><br>
+
+·&nbsp;&nbsp; &nbsp; 	Asylum seeker or refugee enrolled in full-time tertiary studies<br>
+·&nbsp;&nbsp; &nbsp; 	Attending university in Melbourne or Sydney<br>
+·&nbsp;&nbsp; &nbsp; 	Completing one of the following degrees:  Science, Engineering (all types), Commerce / Business (all majors), Information Technology, Mathematics, Law, Arts<br><br>
+
+<strong>Process:</strong>
+    </p>
+  </div>
+
+  <div class="col-lg-12">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <strong>Express interest </strong>
+        </td>
+        <td>
+          Submit your details <a href="/contact-us" style="color:#B43092">here</a>. A CareerSeekers team member will contact you to discuss your studies, your career goals and suitability for the program.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>CV development</strong>
+        </td>
+        <td>
+          Your Advisor will help you develop a CV that summarises your studies and any work experience. This is put forward to one of our employment partners, who will assess your CV for a potential fit with their organisation.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Pre-employment training</strong>
+        </td>
+        <td>
+          Attend a series of workshops with other participants to help prepare for the workplace. The workshops will assist with your preparation for interviews, navigating the workplace and building your confidence.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Interview</strong>
+        </td>
+        <td>
+          Every participant must undertake a formal corporate job interview.  The interview is designed to assess your fit with the organisation and also allow you to ask questions about how the internship will align with your career ambitions.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Internship</strong>
+        </td>
+        <td>
+          Commence your internship.  During your first week on the job, you will sit down with your Advisor and Manager to set objectives for the internship. Each week you will provide a progress report to your Advisor detailing your accomplishments and also asking for any help that you need to get the most out of the internship.
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
+{% endblock %}

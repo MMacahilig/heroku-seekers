@@ -1,0 +1,778 @@
+.inline-display {
+    display: inline!important;
+}
+
+
+body {
+    color: #2e2e2e;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+/*_____Main Page_______*/
+.br{
+  text-align:center;
+  font-size: 320%;
+  padding: 200px;
+  font-weight: bold;
+}
+
+/*_____Participants Stories_______*/
+.bg-1 .masthead h1.ui.header {
+  margin-top: 2.4em; }
+
+.fixed-bg {
+  min-height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 4em; }
+.fixed-bg.bg-1 {
+  padding-top: 0em;
+  min-height: 100%;
+  background-position: center center;
+  background-image: url('/samples/watermark.png'); }
+/*--------*/
+
+.imgContainer{
+  width: 176 px;
+  height: 112 px;
+padding: 10px;
+  -webkit-transition: all 0,3s ease;
+     -moz-transition: all 0,3s ease;
+       -o-transition: all 0,3s ease;
+      -ms-transition: all 0,3s ease;
+          transition: all 0,3s ease;
+}
+
+.imgContainer:hover {
+  -webkit-filter: opacity(0.3);
+}
+
+
+
+a {
+  color:#000000;
+}
+
+a:hover {
+    color:#9b1c95;
+}
+
+.no-border {
+    border: none;
+}
+
+iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.fb-like {
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.banner {
+    height: 650px;
+    overflow: hidden;
+}
+
+.poster {
+    height: 600px;
+    overflow: hidden;
+}
+
+.poster > img {
+    width: 100%;
+}
+
+.banner > img {
+    width: 100%;
+}
+
+ul.nav li > ul {
+    display: none;
+}
+
+ul.nav li ul.dropdown-menu {
+    background-color: #B43092;
+    color: #000;
+}
+
+.nav>li>a.social-media-icons {
+    padding-top: 7px;
+    padding-bottom: 6px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.navbar-custom .navbar-nav.navbar-right > li {
+    background-color: #B43092;
+    border: none;
+    min-width: 0px
+}
+
+.navbar-custom .navbar-nav.navbar-right > li > a:hover {
+    color: #ffffff;
+    background-color: #B43092;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: #FFF;
+    background-color:#B43092;
+}
+
+.dotted-background {
+    background-image: radial-gradient(4px, #7f7f7f, #FFF, #FFF);
+    background-size: 10px 10px;
+    background-position: 0px 0px, 1px 0px, 1px -1px, 0px 1px;
+}
+
+.white-background {
+    background-color: #fff;
+}
+
+.light-background {
+    background-color: #f1f1f1;
+}
+
+.dark-background {
+    background-color: #666;
+    color:#fff;
+}
+
+.orange-dotted-border-bottom {
+    border-bottom: 0.3em dotted #B43092;
+}
+
+.list-unstyled.contact {
+    font-size:18px;
+}
+
+.inherit-font-size {
+    font-size: inherit !important;
+}
+
+.list-unstyled.contact a,.contact_address {
+    color:#000000;
+}
+
+.hard-left {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.normal-font-weight {
+    font-weight: normal;
+}
+
+.padded-top {
+    padding-top:20px;
+}
+
+.padded-top-small {
+    padding-top: 5px;
+}
+
+.padded-right {
+    padding-right:10px;
+}
+
+.padded-bottom {
+    padding-bottom: 20px;
+}
+
+.bottom-margin-medium {
+    margin-bottom: 20px;
+}
+
+.bottom-margin-large {
+    margin-bottom: 40px;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0px;
+}
+
+.notrounded {
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+.homepage-strip h2 {
+    padding-bottom: 8px;
+}
+
+h3.register {
+    margin-top: 0px;
+    padding-bottom: 8px;
+}
+
+/* tab */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    background-color: #f1f1f1;
+}
+
+#students.tab-pane, #employers.tab-pane {
+    padding-top: 14px;
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+/* navbar */
+.navbar {
+    margin-bottom: 0px;
+    margin-left: auto;
+
+}
+
+.navbar-collapse {
+    padding:0px;
+    margin:0px;
+}
+
+.container > .navbar-collapse {
+    margin-left:0px
+}
+
+.navbar-custom {
+    background-color: #B43092;
+}
+
+.navbar-custom .navbar-text {
+    color: #ffffff;
+}
+
+.navbar-custom .navbar-nav > li {
+    background-color: #B43092;
+    border-right: 1px solid #fff;
+    min-width: 100px;
+}
+.navbar-custom .navbar-nav > li > a,
+.navbar-custom .navbar-nav > li.dropdown > .dropdown-menu > li > a {
+    color: #ffffff;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > li.dropdown > .dropdown-menu > li > a:hover,
+.navbar-custom .navbar-nav > li.dropdown > .dropdown-menu > li > a:focus {
+    color: #ffffff;
+    background-color: #d45eb7;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .dropdown > .dropdown-menu > .active > a,
+.navbar-custom .navbar-nav > li.dropdown > .dropdown-menu > .active > a:hover,
+.navbar-custom .navbar-nav > li.dropdown > .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #d45eb7;
+}
+.navbar-custom .navbar-nav > .disabled > a,
+.navbar-custom .navbar-nav > .disabled > a:hover,
+.navbar-custom .navbar-nav > .disabled > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+    border-color: #e1460e;
+}
+.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
+.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+    background-color: #B43092;
+    color: #ffffff;
+}
+.navbar-custom .navbar-nav > .open > a .caret,
+.navbar-custom .navbar-nav > .open > a:hover .caret,
+.navbar-custom .navbar-nav > .open > a:focus .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.navbar-custom .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+.page-header {
+    margin: 20px 0 20px;
+}
+@media (max-width: 767px) {
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+        color: #ffffff;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #ffffff;
+        background-color: transparent;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ffffff;
+        background-color: #B43092;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #cccccc;
+        background-color: transparent;
+    }
+}
+.navbar-custom .navbar-link {
+    color: #ffffff;
+}
+.navbar-custom .navbar-link:hover {
+    color: #ffffff;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    height: 400px;
+    max-width: 100;
+    margin-bottom: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.carousel-caption > p {
+    background: rgba(0,0,0,0.20);
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 400px;
+    background-color: #777;
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-width: 800px;
+    height: 450px;
+}
+
+/* screen stretch adjustment
+-------------------------------------------------- */
+
+.bracket{
+	max-width:    1600px;
+	margin-left:  auto;
+	margin-right: auto;
+}
+
+.screen-adapter{
+	text-align:right;
+}
+/*
+@media (max-width: 410px){
+	.screen-adapter{
+		text-align:left;
+	}
+}*/
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing .col-lg-4 p {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+/* Forms
+---------------------------- */
+.input-text-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.input-vertical-group >input[type="text"]:first-of-type {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-vertical-group >input[type="text"]:not(:first-of-type):not(:last-of-type) {
+    border-radius: 0;
+}
+
+.input-vertical-group > .form-control:last-of-type {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.input-group >input[type="text"]:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group >input[type="text"]:not(:first-of-type):not(:last-of-type) {
+    border-radius: 0;
+}
+
+.input-group > .form-control:last-of-type {
+    border-top-right-radius: 4px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 4px !important;
+}
+
+.digit-box {
+    width: 40px !important;
+}
+
+.area_code {
+    width: 45px !important;
+}
+
+.phone {
+    width: 150px !important;
+}
+
+.mobile {
+    width: 195px !important;
+}
+
+.date {
+    width: 150px;
+}
+
+.darker-hr {
+    border-top: 1px solid darkgray;
+}
+
+.orange-button {
+    color: #FFF;
+    background-color: #B43092;
+    border-color: #671363;
+}
+
+.orange-button:hover, .orange-button:focus  {
+    color: #FFF;
+    background-color: #d45eb7;
+}
+
+.form-group.has-error .help-block.nod_msg:not(:last-of-type),
+.form-group.has-error .radio:not(:last-of-type) .help-block.nod_msg {
+    display: none !important;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.ratings .panel-heading {
+    background-color: #ed654a;
+    color: #FFF;
+}
+
+.ratings .form-group {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.hide-form {
+    display: none;
+}
+/* Profile
+-------------------------------------------------- */
+
+.profile-picture {
+    width: 520px;
+    height: 350px;
+}
+
+.profile-position {
+    color: #7F7F7F
+}
+
+.profile-description {
+    color: #7f7f7f;
+}
+
+/* Model
+-------------------------------------------------- */
+
+.panel-default > .orange-panel-heading {
+    color: #ed654a;
+    background-color: #3f3e40;
+    border-color: #3f3e40;
+}
+
+/* Program Components
+-------------------------------------------------- */
+
+.components-inline > .components-item {
+    float: left;
+    width: 20%;
+    font-size: 0.9em;
+}
+
+.components-inline {
+    overflow: auto;
+    margin-bottom: 0px
+}
+.components-item {
+    background-color: transparent;
+    border: none;
+}
+.components-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.components-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.horizontal-panel {
+    display: table;
+    margin-bottom: 10px;
+    min-height: 125px;
+}
+
+.horizontal-panel > div {
+    display: table-cell;
+}
+
+.horizontal-panel-heading {
+    padding: 10px 15px;
+    background-color: #ed654a;
+    color: #FFF;
+    vertical-align: middle;
+    min-width: 220px;
+}
+
+.horizontal-panel-body {
+    background-color: #575759;
+    color: #FFF;
+}
+
+.orange-text {
+    color: #B43092;
+}
+
+.logo-heading {
+    width: 330px;
+    background-color: transparent;
+}
+
+/* Companies
+-------------------------------------------------- */
+
+.company-row {
+    height: auto;
+}
+
+.company-row img {
+     max-height: 100px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     opacity: 0.8;
+ }
+
+.company-row img:hover {
+    opacity: 1.0;
+    margin-top: -1px;
+}
+
+.company-row div {
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+
+/* Internships
+-------------------------------------------------- */
+.internships > .list-group > .list-group-item {
+    background-color: #575759;
+    color: #FFF;
+}
+
+.internship-logo img {
+    max-height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Partners
+-------------------------------------------------- */
+
+.partner img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 767px) {
+    .components-inline > .components-item {
+        width: 100%;
+        border-bottom: 1px solid #FFF;
+    }
+
+    .horizontal-panel > div {
+        display: block;
+    }
+
+    .screen-adapter{
+		text-align:left;
+	}
+}
+
+@media (min-width: 768px) {
+
+    /* Remove the edge padding needed for mobile */
+    .marketing {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* Navbar positioning foo */
+    .navbar-wrapper {
+        margin-top: 20px;
+    }
+    .navbar-wrapper .container {
+        padding-right: 15px;
+        padding-left:  15px;
+    }
+    .navbar-wrapper .navbar {
+        padding-right: 0;
+        padding-left:  0;
+    }
+
+    /* The navbar becomes detached from the top, so we round the corners */
+    .navbar-wrapper .navbar {
+        border-radius: 4px;
+    }
+
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 135px;
+        font-size: 18px;
+        line-height: 2;
+        color: #000000;
+         font-size: 35px
+
+
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+
+
+}
+
+@media (min-width: 992px) {
+    .featurette-heading {
+        margin-top: 120px;
+    }
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    padding-left: 400;
+}
+
+.pindent {
+    margin-left: 40px;
+}
+
+.red{
+	color:red;
+}
+
+table {
+	width: 100%;
+}
+
+.table_item {
+	width: 500px;
+	margin-top: 0px;
+	margin-bottom:0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	vertical-align: top;
+	font-size:90%;
+}

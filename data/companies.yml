@@ -1,0 +1,138 @@
+- Accor:
+    _slug: accor
+    name: Accor
+    image: "/samples/content_entries/accorplus-1.png"
+    url: "/images/accorplus.png"
+- CFS:
+    _slug: cfs
+    name: CFS
+    image: "/samples/content_entries/cfs-1.png"
+    url: "/images/cfs.png"
+- City Of Sydney:
+    _slug: city-of-sydney
+    name: City Of Sydney
+    image: "/samples/content_entries/City_of_Sydney-1.png"
+    url: "/images/City_of_Sydney.png"
+- CBA:
+    _slug: cba
+    name: CBA
+    image: "/samples/content_entries/cba-1.png"
+    url: "/images/CBA.png"
+- CommInsure:
+    _slug: comminsure
+    name: CommInsure
+    url: "/images/comminsure.png"
+- DHHS:
+    _slug: dhhs
+    name: DHHS
+    image: "/samples/content_entries/DHHS-1.png"
+    url: "/images/DHHS.png"
+- Disability Employment:
+    _slug: disability-employment
+    name: Disability Employment
+    image: "/samples/content_entries/disabilityLogo.png"
+    url: "/images/disabilityLogo.png"
+- DPI:
+    _slug: dpi
+    name: DPI
+    image: "/samples/content_entries/dpi-1.png"
+    url: "/images/DPI.png"
+- DPE:
+    _slug: dpe
+    name: DPE
+    image: "/samples/content_entries/DPE-1.png"
+    url: "/images/DPE.png"
+- Ericsson:
+    _slug: ericsson
+    name: Ericsson
+    image: "/samples/content_entries/Ericsson-1.png"
+    url: "/images/Ericsson.png"
+- First State Super:
+    _slug: first-state-super
+    name: First State Super
+    image: "/samples/content_entries/First_State_Super-1.png"
+    url: "/images/First_State_Super.png"
+- GetUp:
+    _slug: get-up
+    name: GetUp
+    image: "/samples/content_entries/GetUp-1.png"
+    url: "/images/GetUp.png"
+- GHD:
+    _slug: ghd
+    name: GHD
+    image: "/samples/content_entries/ghd-1.png"
+    url: "/samples/content_entries/GHD.jpg"
+- HDY:
+    _slug: hdy
+    name: HDY
+    image: "/samples/content_entries/HDY-1.png"
+    url: "/images/hdy-seekers.png"
+- HSF:
+    _slug: hsf
+    name: HSF
+    image: "/samples/content_entries/3_Bridges-1.png"
+    url: "/images/hsf_-_10x10.png"
+- IAG:
+    _slug: iag
+    name: IAG
+    image: "/samples/content_entries/IAG-1.png"
+    url: "/images/iag-seekers.png"
+- Lend Lease:
+    _slug: lend-lease
+    name: Lend Lease
+    image: "/samples/content_entries/lend_lease-1.png"
+    url: "/samples/content_entries/Lendlease-min.jpg"
+- Macquarie:
+    _slug: macquarie
+    name: Macquarie
+    image: "/samples/content_entries/macquarie-1.png"
+    url: "/samples/content_entries/macquarie-bank.png"
+- Melbourne Metro:
+    _slug: melbourne-metro
+    name: Melbourne Metro
+    url: "/images/Metro_Trains_Melbourne_Logo.svg.png"
+- PwC:
+    _slug: pwc
+    name: PwC
+    image: "/samples/content_entries/PwC-1.png"
+    url: "/images/pwc-seekers.png"
+- RDVSA:
+    _slug: rdvsa-1
+    name: RDVSA
+    image: "/samples/content_entries/SEALS-1.png"
+    url: "/images/RDVSA-seekers.png"
+- Seals:
+    _slug: energy-development-ltd
+    name: Seals
+    image: "/samples/content_entries/SEALS-1.png"
+    url: "/images/SEALS.png"
+- SJB:
+    _slug: sjb
+    name: SJB
+    image: "/samples/content_entries/SJB-1.png"
+    url: "/images/sjb-seekers.png"
+- SMC:
+    _slug: smc
+    name: SMC
+    image: "/samples/content_entries/SJB-1.png"
+    url: "/images/SMC-Seekers.png"
+- Telstra:
+    _slug: telstra
+    name: Telstra
+    image: "/samples/content_entries/Telstra-1.png"
+    url: "/images/seekers-telstra.png"
+- UniSuper:
+    _slug: uni-super
+    name: UniSuper
+    image: "/samples/content_entries/UniSuper-1.png"
+    url: "/images/UniSuper.png"
+- Westpac:
+    _slug: westpac
+    name: Westpac
+    image: "/samples/content_entries/Westpac-1.png"
+    url: "/samples/content_entries/Westpac_300x200.png"
+- 3 Bridges:
+    _slug: 3-bridges
+    name: 3 Bridges
+    image: "/samples/content_entries/3_Bridges-1.png"
+    url: "/images/3_Bridges.png"

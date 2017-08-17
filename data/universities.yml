@@ -1,0 +1,12 @@
+- Deakin:
+    _slug: deakin
+    name: Deakin
+    image: "/samples/content_entries/Deakin-1.png"
+- La Trobe:
+    _slug: la-trobe
+    name: La Trobe
+    image: "/samples/content_entries/La_Trobe_Uni-1.png"
+- UTS:
+    _slug: rmit
+    name: UTS
+    image: "/samples/content_entries/UTS-1.png"

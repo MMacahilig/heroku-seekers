@@ -1,0 +1,141 @@
+---
+title: CareerSeekers
+slug: landing
+position: 3
+listed: false
+published: true
+is_layout: false
+seo_title: CareerSeekers New Australian Program
+editable_elements:
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Nawar.png"
+---
+{% extends parent %}
+{% block main %}
+{% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Nawar.png'>
+</div>
+{% endif %}
+{% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+<div class='container-fluid'>
+  {% include page_header %}
+
+
+  <div class='col-lg-12'>
+    <p>
+      CareerSeekers is non-profit social enterprise that works with leading organisations to create employment opportunities for asylum seekers <br>
+      and refugees who aspire to obtain professional employment.Our program supports two distinct groups of asylum seekers and refugees: <br><br>
+
+      Mid-career Professionals – those with tertiary qualifications and professional work experience who strive to re-establish their careers <br>
+      in Australia. These participants undertake paid internships lasting twelve weeks that provide local experience, a local reference and help <br>
+      them establish a network within their chosen profession. <br><br>
+
+      University students - full-time university students who undertake paid internships during university breaks in an effort to link their studies <br>
+      with practical work experience. The CareerSeekers university program aligns to existing corporate internship programs. <br><br>
+
+      CareerSeekers is endorsed as an Item 1 Deductible Gift Recipient organisation.
+    </p>
+  </div>
+
+  <div class='container-fluid' style="padding-left:0;padding-right:0;">
+    <h3>What do we do?</h3>
+    <div class='col-lg-12'>
+      <p>
+        The CareerSeekers program is an adaptation of the successful CareerTrackers Indigenous Internship Program. <br><br>
+
+        There are thousands of refugees and asylum seekers that enter Australia with valuable skills and professional training but lack work experience<br>
+         in Australia. Here at CareerSeekers, we provide refugees and asylum seekers a gateway to gain Australian work experience through internship <br>
+         opportunities with our corporate partners.<br><br>
+
+        As part of providing internship opportunities for refugees and asylum seekers, CareerSeekers support each participant in the program by providing<br>
+         them with training to create their professional CV, build up their interview skills, and advice in adapting to the Australian workplace and culture.
+
+      </p>
+    </div>
+
+  </div>
+
+  <div class='container-fluid' style="padding-left:0;padding-right:0;">
+    <h3>Professional Experience for the Future</h3>
+    <div class='col-lg-12'>
+      <p>
+        Part of the CareerSeekers program involves the generation of internship opportunities that cater specifically to the desired experience of each participant.<br>
+         The internship opportunities within our corporate partners have been designed with the participant at the core, they are not the standard opportunities <br>
+         provided by our corporate partners but are new internship placements created specifically for CareerSeekers participants.<br><br>
+
+        The goal for the generated internship for refugees and asylum seeker participants is to ensure that they have the skills to progress their careers in Australia.<br>
+         We want our participants to have the skills and experience needed to enter into the Australian workforce and achieve their dreams.
+
+      </p>
+    </div>
+
+  </div>
+
+  <div class='container-fluid' style="padding-left:0;padding-right:0;">
+
+      <div class=" visible-lg visible-md" style="padding-left:0;padding-right:0;">
+        <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/landingBanner.png'>
+      </div>
+
+  </div>
+  <!--
+  <div class="col-lg-12">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <strong>Express interest </strong>
+        </td>
+        <td>
+          Submit your details here <a href="/contact-us" style="color:#B43092">here</a>. A CareerSeekers team member will contact you to discuss your experience and suitability for the program.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>CV development </strong>
+        </td>
+        <td>
+          Your Advisor will help you develop a CV that gives a snapshot of your work experience. This is put forward to one of our employment partners, who will assess your CV for a potential fit with their organisation.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Pre-employment training</strong>
+        </td>
+        <td>
+          Attend a series of workshops with other participants to help prepare for the workplace. The workshops will assist with your preparation for interviews, navigating the workplace and building your confidence.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Interview</strong>
+        </td>
+        <td>
+          Every participant must undertake a formal corporate job interview.  The interview is designed to assess your fit with the organisation and also allow you to ask questions about how the internship will align with your career ambitions.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Internship</strong>
+        </td>
+        <td>
+          Commence your internship.  During your first week on the job, you will sit down with your Advisor and Manager to set objectives for the internship. Each week you will provide a progress report to your Advisor detailing your accomplishments and also asking for any help that you need to get the most out of the internship.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Post internship</strong>
+        </td>
+        <td>
+          After the completion of the internship your Advisor will support you to incorporate your experience from the program in your CV and focus your employment search
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    We work with participants with qualifications and experience from a range of sectors.
+  </div>-->
+
+</div>
+{% endblock %}

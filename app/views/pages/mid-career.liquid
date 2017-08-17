@@ -1,0 +1,123 @@
+---
+title: Mid-career Professionals
+slug: mid-career
+position: 3
+listed: true
+published: true
+is_layout: false
+seo_title: Mid-career Professionals
+editable_elements:
+  main/banner: "http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Nawar.png"
+  main/about_us_text: "<p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p>We
+    partner with leading organisations to create paid internships\r\nfor asylum seekers
+    and recently arrived refugees who are looking to restart\r\ntheir professional
+    careers in Australia. Internships provide valuable local\r\nexperience and access
+    to industry networks – both of which are often barriers\r\nto new Australians
+    accessing professional employment.  &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>Internships
+    provide participants with entry-level roles in\r\ntheir sector, helping them to
+    identify the appropriate transition path to\r\nlonger-term opportunities.&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>Internships
+    last twelve\r\nweeks and can commence at any point during the year, once participants
+    have\r\nsuccessfully completed the preparatory stages of the program. &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>There
+    is no fee to be involved, however participants need\r\nto actively participate
+    in the program and attend all workshops and events. &nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>We
+    work with\r\nparticipants with qualifications and experience from a range of sectors.&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>Currently,
+    the program\r\nis open to those who meet the following criteria:&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p>&nbsp;
+    &nbsp; &nbsp; &nbsp; ● &nbsp; &nbsp;  Asylum seeker or recently arrived refugee
+    with\r\nEnglish suitable for a professional work place</p>\r\n\r\n<p>● &nbsp;
+    &nbsp;  A Bachelor degree from a university in their\r\ncountry of origin</p>\r\n\r\n<p>●
+    &nbsp; &nbsp;  Professional experience from their country of\r\norigin</p>\r\n\r\n<p>●
+    &nbsp; &nbsp;  Based in Sydney or Melbourne&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p><b>Process:</b></p><p></p>"
+---
+{% extends parent %}
+{% block main %}
+{% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Nawar.png'>
+</div>
+{% endif %}
+{% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+<div class='container-fluid'>
+  {% include page_header %}
+
+
+  <div class='col-lg-12'>
+    <p>
+      We partner with leading organisations to create paid internships for asylum seekers or recently-arrived refugees who are looking to restart their professional careers in Australia. Internships provide valuable local experience and access to industry networks – both of which are often barriers to new Australians accessing professional employment.  <br><br>
+
+      Internships provide participants with entry level roles in their relevant sector, helping them to identify the appropriate transition path to longer-term opportunities. <br><br>
+
+      Internships last twelve weeks and can commence at any point during the year after participants have successfully completed the preparatory stages of the program. <br><br>
+
+      There is no cost to take part in the program, however participants need to actively join in and attend all workshops and events.<br><br>
+
+      Currently, the program is open to those who meet the following criteria:<br><br>
+
+      ·&nbsp;&nbsp; &nbsp;  	Asylum seeker or recently-arrived refugee with English suitable for a professional work place <br>
+      ·&nbsp;&nbsp; &nbsp;  	A bachelor degree from a University in their country of origin <br>
+      ·&nbsp;&nbsp; &nbsp;  	Professional experience from their country of origin <br>
+      ·&nbsp;&nbsp; &nbsp;  	Based in Sydney or Melbourne <br><br>
+
+      <strong>Process: </strong>
+    </p>
+  </div>
+
+  <div class="col-lg-12">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <strong>Express interest </strong>
+        </td>
+        <td>
+          Submit your details here <a href="/contact-us" style="color:#B43092">here</a>. A CareerSeekers team member will contact you to discuss your experience and suitability for the program.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>CV development </strong>
+        </td>
+        <td>
+          Your Advisor will help you develop a CV that gives a snapshot of your work experience. This is put forward to one of our employment partners, who will assess your CV for a potential fit with their organisation.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Pre-employment training</strong>
+        </td>
+        <td>
+          Attend a series of workshops with other participants to help prepare for the workplace. The workshops will assist with your preparation for interviews, navigating the workplace and building your confidence.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Interview</strong>
+        </td>
+        <td>
+          Every participant must undertake a formal corporate job interview.  The interview is designed to assess your fit with the organisation and also allow you to ask questions about how the internship will align with your career ambitions.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Internship</strong>
+        </td>
+        <td>
+          Commence your internship.  During your first week on the job, you will sit down with your Advisor and Manager to set objectives for the internship. Each week you will provide a progress report to your Advisor detailing your accomplishments and also asking for any help that you need to get the most out of the internship.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Post internship</strong>
+        </td>
+        <td>
+          After the completion of the internship your Advisor will support you to incorporate your experience from the program in your CV and focus your employment search
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    We work with participants with qualifications and experience from a range of sectors.
+  </div>
+
+</div>
+{% endblock %}

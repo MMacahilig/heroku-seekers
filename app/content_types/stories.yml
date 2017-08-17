@@ -1,0 +1,51 @@
+name: Stories
+slug: stories
+description: Student stories
+label_field_name: student_name
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- student_name:
+    label: Student name
+    type: string
+    required: true
+    hint: Name of the student
+    localized: false
+- stream:
+    label: Stream
+    type: text
+    required: true
+    hint: Participant Stream
+    localized: false
+- participant_stream:
+    label: Participant stream
+    type: text
+    required: true
+    hint: Participant stream
+    localized: false
+- company:
+    label: Company
+    type: text
+    required: true
+    hint: Name of company
+    localized: false
+- image:
+    label: Image
+    type: file
+    required: true
+    hint: Picture of the student
+    localized: false
+- url:
+    label: url
+    type: string
+    required: true
+    hint: url of image
+    localized: false
+- youtube_video_url:
+    label: Youtube video url
+    type: string
+    required: true
+    hint: Video of the student
+    localized: false
