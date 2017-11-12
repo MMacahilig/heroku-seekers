@@ -253,7 +253,7 @@ h3.register {
 .navbar-custom .navbar-nav > li {
     background-color: #B43092;
     border-right: 1px solid #fff;
-    min-width: 100px;
+    min-width: 50px;
 }
 .navbar-custom .navbar-nav > li > a,
 .navbar-custom .navbar-nav > li.dropdown > .dropdown-menu > li > a {

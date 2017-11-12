@@ -28,13 +28,19 @@ editable_elements:
     &nbsp; &nbsp;  Professional experience from their country of\r\norigin</p>\r\n\r\n<p>●
     &nbsp; &nbsp;  Based in Sydney or Melbourne&nbsp;</p>\r\n\r\n<p></p>\r\n\r\n<p><b>Process:</b></p><p></p>"
 ---
-{% extends parent %}
+{% include header2 %}
 {% block main %}
 {% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
 {% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
 {% if banner_url != '' %}
+<div id="banner_div" class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/cs-banner-5.png'>
+</div>
+{% endif %}
+
+{% if $(window).width() < 1440  %}
 <div class='banner visible-lg visible-md'>
-  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Banner_Nawar.png'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/cs-banner-5.png'>
 </div>
 {% endif %}
 {% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
@@ -121,3 +127,33 @@ editable_elements:
 
 </div>
 {% endblock %}
+
+{% include footer %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACu7936Ft2gKVaG9vHlx8IL_QTdS1pHbE&callback=initMap"
+                async defer></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap-datepicker.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/docs.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/player.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/nod.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/spin.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/jquery.fullPage.js" type="text/javascript" ></script>
+<script type="text/javascript">
+    $(function() {
+    //console.log( "ready!" );
+        var win = $(window).width();  
+        if(win < 1445){
+            
+            $("#banner_div").css("height","450px");
+        }
+        
+        if(win < 415){
+            console.log("mobile");
+            $("#seekers-mini-logo").css("margin-left","15px");
+            $("#seekers-nav").css("padding-left","30px");
+        }
+})
+</script>

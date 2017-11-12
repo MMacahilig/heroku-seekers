@@ -41,7 +41,7 @@ the future of Indigenous leadership in Australia.</p>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
         {% csrf_meta %}
         <!--<link href="{{ 'logo.png' | theme_image_url }}" rel='shortcut icon'>-->
-        <link href="https://lh3.googleusercontent.com/YeVhPaIVcb4JaBoIA6ayXkMFejxhJLC5kBa2sxNNB1feZgbv0EZDZ4SutsR_qZRUpSE8Ks77gMevIylIS-XqRLA1COgYsa-tFzRgjkYRb2hLDeTKUVU2s59FXNtMMAvrcWsmfuFhhBTQ9Mmc1mTF5tcrwUkDmvQf47Ky6LuUS81qCszpfhkWmcWjQpKotf8-WaQwPuQ7r3heldfOjapVs6vpmosdfsIjTuLqQFSekwG8OEY4SKmietPzvKLvp0maFl0Gc1NtFm7VUH5KuSHQl16b65GruLIPOjhknPGxLB0s0Efu7smy4xWQhs61S5ZKUWNDymeLWEtO6I4ZvN3fOOmwKW7HvCQfWFmPcC89hsEnxxu73IrCfflOafuzg2QqLO36CM5SRMFBIrqwIRgA_Palsi_aB-171DGX06iKILUvD-kcH4cREuV14WnnxsyW3a0xNAVxt3Zo7wH_-xUCESkZt4nVqANopnZKlsbdN2LByeeJvbSRTWR58qdWycYmpvzjNto5zVGkpzrpUFdAxMM3dP5kK3g70qBD3NkaMV2e-flmjFcT5CNfdZr6cKr4uILA_OFVJJ0F8QDYS2IeqcoLH0qmZuM3yrA4i0LSKsUebI8y=w300-h289-no" rel='shortcut icon'>
+        <link href="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/cs-32x32.png" rel='shortcut icon'>
         <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
         <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
 
@@ -107,18 +107,19 @@ the future of Indigenous leadership in Australia.</p>
         
         <div class='container-fluid' style="padding-left:0;padding-right:0;">
 
-            <div class="poster hidden-md-down" style="padding-left:0;padding-right:0;">
-                <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/1920-main.png'>
+            <div id="poster_div" class="poster hidden-md-down" style="padding-left:0;padding-right:0;">
+                <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/cs-demo-poster-grey-2.png'>
             </div>
 
 
         </div>
-
+        <!--
         <div class='container-fluid' style="padding-left:0;padding-right:0;">
             <div class="poster visible-xs" style="padding-left:0;padding-right:0;">
                 <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/mobile_front_page_banner.png'>
             </div>
         </div>
+        -->
         <div class='container marketing'>
             <!--  <div class='page-header container text-center white-background'>-->
             <div class='lead'style="text-align:center">
@@ -209,13 +210,14 @@ the future of Indigenous leadership in Australia.</p>
         <link type="text/javascipt" href="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/jquery.fullPage.js">
 
         <script type="text/javascript">
-            $(document).ready(function() {
-                $('#fullpage').fullpage({
-                    //sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-                    //anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-                    //menu: '#menu',
-                });
-            });
+            $(function() {
+            //console.log( "ready!" );
+                var win = $(window).width();  
+                if(win > 1440){
+
+                    $("#poster_div").css("height","800px");
+                }
+        })
         </script>
         <script>
 

@@ -3,7 +3,28 @@ title: Forms
 slug: forms
 position: 99
 listed: false
-published: false
+published: true
 is_layout: false
+seo_title: Forms
 ---
 {% extends parent %}
+
+{% block main %}
+<div class='container-fluid'>
+  {% include page_header %}
+  <div class='container-fluid'>
+    {% editable_text 'content' %}
+    SOMETHING HERE
+    {% endeditable_text %}
+  </div>
+  <ul class='forms-list'>
+    {% for form in contents.forms %}
+    <li>
+      <a href='{{form.link}}'>
+        {{form.title}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -9,7 +9,7 @@ seo_title: Our Team
 editable_elements:
   main/banner: ''
 ---
-{% extends parent %}
+{% include header2 %}
 {% block main %}
 
 <div class='container-fluid'>
@@ -28,10 +28,10 @@ editable_elements:
     {% for team_member in team_location.team_members %}
     <div class='container-fluid bottom-margin-large'>
       <div class='row bottom-margin-medium'>
-        <div class='col-lg-5'>
+        <div class='col-lg-6'>
           <img alt='{{team_member.name | escape}}' class='profile-picture ' src='{{team_member.url | escape}}'>
         </div>
-        <div class='col-lg-7'>
+        <div class='col-lg-6'>
           <h3>{{team_member.name | escape}}</h3>
           <h4 class='profile-position'>{{team_member.position | escape}}</h4>
           <h5>
@@ -41,6 +41,7 @@ editable_elements:
             {{team_member.description}}
           </p>
         </div>
+		  
       </div>
       <!--<div class='row'>
         <div class='col-lg-9'>
@@ -55,3 +56,16 @@ editable_elements:
 </div>
   {% endfor %}
 {% endblock %}
+{% include footer %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACu7936Ft2gKVaG9vHlx8IL_QTdS1pHbE&callback=initMap"
+        async defer></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap-datepicker.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/docs.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/player.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/nod.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/spin.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/jquery.fullPage.js" type="text/javascript" ></script>
