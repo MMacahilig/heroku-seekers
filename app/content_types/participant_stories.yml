@@ -1,23 +1,23 @@
-name: 2017 Stories
-slug: 2017_stories
-description: Student stories
-label_field_name: student_name
+name: Paritipant Stories
+slug: participant_stories
+description: Paritipant stories
+label_field_name: participant_name
 order_by: _position
 order_direction: asc
 public_submission_enabled: false
 public_submission_account_emails: []
 fields:
-- student_name:
+- participant_name:
     label: Student name
     type: string
     required: true
     hint: Name of the student
     localized: false
-- origin:
-    label: Origin
+- stream:
+    label: Stream
     type: text
     required: true
-    hint: place
+    hint: Participant Stream
     localized: false
 - participant_stream:
     label: Participant stream
@@ -31,6 +31,12 @@ fields:
     required: true
     hint: Name of company
     localized: false
+- image:
+    label: Image
+    type: file
+    required: true
+    hint: Picture of the student
+    localized: false
 - url:
     label: url
     type: string
@@ -43,10 +49,3 @@ fields:
     required: true
     hint: Video of the student
     localized: false
-- description:
-    label: text about student
-    type: string
-    required: false
-    hint: Video of the student
-    localized: false
-

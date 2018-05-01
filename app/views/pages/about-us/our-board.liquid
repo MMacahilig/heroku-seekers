@@ -1,73 +1,47 @@
 ---
-title: Our Team
-slug: our-team
-position: 3
+title: Our Board
+slug: our-board
 listed: true
 published: true
-is_layout: false
-seo_title: Our Team
+cache_strategy: none
+response_type: text/html
+position: 3
+seo_title: Our Board of Directors
 editable_elements:
-  main/banner: ''
+ 
 ---
 {% include header2 %}
 {% block main %}
 
 <div class='container-fluid'>
   {% include page_header %}
-  {% for team_location in contents.team_locations %}
-  <div class='container-fluid'>
-    <div class='row bottom-margin-large'>
-      <div class='col-lg-12'>
-        
-       {% if team_location.location == "Team Members" %}
-        <h2 class='' style="margin-left: 15px">
-        
-        </h2>
-        {% else %}
-        <h2 class='' style="margin-left: 15px">
-          {{team_location.location | escape}}
-        </h2>
-        {% endif %}
-        
-          <!--
-        <h2 class='' style="margin-left: 15px">
-          {{team_location.location | escape}}
-        </h2>
-        -->
-        
-      </div>
-    </div>
-    {% for team_member in team_location.team_members %}
-    <div class='container-fluid bottom-margin-large'>
-      <div class='row bottom-margin-medium'>
-        <div class='col-lg-6'>
-          <img alt='{{team_member.name | escape}}' class='profile-picture ' src='{{team_member.url | escape}}'>
+  
+  <div class='row bottom-margin-large'>
+    {% for board in contents.board %}
+    <div class="col-lg-12" style="margin-bottom: 50px">
+        <div class='col-lg-4'>
+          <img alt='{{board.name | escape}}' class='' src='{{board.image | escape}}' style="width: 350px;height: 350px">
         </div>
-        <div class='col-lg-6'>
-          <h3>{{team_member.name | escape}}</h3>
-          <h4 class='profile-position'>{{team_member.position | escape}}</h4>
-          <h5>
-            <a href='mailto:{{team_member.email | escape}}'>{{team_member.email | escape}}</a>
-          </h5>
+        <div class='col-lg-8'>
+          <h3>{{board.name | escape}}</h3>
+          <h4 class='profile-position'>{{board.position | escape}}</h4>
           <p class='profile-description'>
-            {{team_member.description}}
+            {{board.description}}
           </p>
+          
         </div>
-		  
-      </div>
-      <!--<div class='row'>
-        <div class='col-lg-9'>
-          <p class='profile-description'>
-            {{team_member.description}}
-          </p>
-        </div>
-      </div>-->
     </div>
+      
+      
     {% endfor %}
   </div>
+  
 </div>
-  {% endfor %}
 {% endblock %}
+
+
+
+
 {% include footer %}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACu7936Ft2gKVaG9vHlx8IL_QTdS1pHbE&callback=initMap"
         async defer></script>

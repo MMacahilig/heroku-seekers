@@ -1,0 +1,180 @@
+---
+title: Learning Contract
+slug: learning-contract
+listed: false
+published: true
+cache_strategy: none
+response_type: text/html
+position: 106
+seo_title: CareerSeekers Learning Contract
+---
+{% include header2 %}
+{% block main %}
+
+<div class='container-fluid'>
+  {% include page_header %}
+  <div class="page-header orange-dotted-border-bottom">
+    <p>
+      The Learning Contract is an agreement between an intern, their manager and  <br>
+
+      CareerSeekers Advisor. It is based on the intern’s goals, the needs of the organisation or <br>
+
+      team, which they will be working, and the requirements of the CareerSeekers program. It also helps to <br>
+ 
+      make sure that there are clear expectations of everyone involved in the internship. <br><br>
+
+
+      The Learning Contract provides a syllabus for all CareerSeekers internships. It includes two standard <br>
+
+      goals that apply to all interns, as well as three unique goals that you will develop, and is structured in <br>
+
+      the following format.<br><br>
+	
+
+      <table style="width:700px;font-size: 14px">
+        <tr>
+          <td ><strong>Learning Goals:</strong> <br><br></td>
+          <td>The Learning Goals are the intended outcomes for an intern during their internship.<br><br></td>
+        </tr>
+        <tr>
+          <td><strong>Tasks &amp; Strategies: </strong><br><br><br></td>
+          <td>This includes a set of tasks and strategies associated with each Learning Goal.<br>They are
+            the specific actions that will help guide the intern to achieve their goals.<br>These should
+            be action oriented and begin with a verb.</td>
+        </tr>
+      </table>
+      <br><br>
+
+      <h4><u>Lifecycle of a Learning Contract</u></h4>
+
+      During the first week of the internship, a meeting will take place between the intern, their manager and <br>
+
+      CareerSeekers Student Advisor to discuss and agree on the goals for the internship. The intern is <br>
+
+      required to take notes and develop the draft Learning Contract and circulate to their manager and <br>
+
+      Student Advisor for final sign-off. <br><br>
+
+	  
+	  
+      The Learning Contract is designed to provide a baseline, which outlines the key activities and projects <br>
+
+      that the intern should undertake during the course of their internship. Each week during full-time work <br>
+
+      interns are required to update their CareerSeekers Advisor on their overall progress in the internship. <br><br>
+	  
+	  
+
+      At the end of the summer internship, managers are asked to evaluate the performance of their intern. <br>
+
+      The Learning Contract is a reference point and can be used as a benchmark for the intern’s <br>
+
+      performance. <br><br>
+
+
+      <br><br><br>
+     
+
+    </p>
+    <br>
+    <form action='/forms/contract' class='' method='POST' novalidate='novalidate' role='form'>
+      <h4><u>Please select from the following to complete the learning contract relevant to you</u></h4>
+      <br>
+      <div class='form-group'>
+        <div class='col-sm-5'>
+        	<select class='form-control' id='gradstatus' name='contract[gradstatus]' value="{{params['gradstatus']}}">
+          	<option selected='' value=''></option>
+
+          	{% if params['gradstatus'] == "non-grad" %}
+        		<option selected ='' value='non-grad'>Non-Graduating Intern</option>
+        		{% else %}
+        		<option value='non-grad'>Non-Graduating Intern</option>
+        		{% endif %}
+
+            {% if params['gradstatus'] == "grad" %}
+        		<option selected ='' value='grad'>Graduating Intern</option>
+        		{% else %}
+        		<option value='grad'>Graduating Intern</option>
+        		{% endif %}
+
+        	</select>
+        </div>
+      </div>
+      <br><br>
+      <div class='row'>
+        <div class='col-sm-12'>
+          <div class='form-group'>
+            <div class='col-sm-2 pull-left'>
+              <button class='btn orange-button' type='submit'>Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% include footer %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACu7936Ft2gKVaG9vHlx8IL_QTdS1pHbE&callback=initMap"
+                async defer></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap-datepicker.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/docs.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/player.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/nod.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/spin.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/jquery.fullPage.js" type="text/javascript" ></script>
+<script type="text/javascript">
+    $(function() {
+    //console.log( "ready!" );
+        var win = $(window).width();  
+        if(win < 1445){
+            
+            $("#banner_div").css("height","450px");
+        }
+        
+        if(win < 415){
+            console.log("mobile");
+            $("#seekers-mini-logo").css("margin-left","15px");
+            $("#seekers-nav").css("padding-left","30px");
+        }
+})
+</script>
+{% block javascripts %}
+
+<script>
+
+
+  $(document).ready(function() {
+
+    var metrics = [
+
+                    [ "[name='contract[grad-status]']", 'presence', 'Field is required and cannot be empty' ],
+
+
+                  ];
+
+
+
+    $( "form" ).nod( metrics , {
+
+                      groupSelector: ".form-group",
+
+                      groupClass: "has-error",
+
+                      helpSpanDisplay: "help-block small"
+
+    });
+
+  });
+
+</script>
+
+{% endblock %}

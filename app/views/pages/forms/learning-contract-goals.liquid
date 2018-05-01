@@ -1,0 +1,1233 @@
+---
+title: Learning Contract - Goals
+slug: learning-contract-goals
+listed: false
+published: true
+cache_strategy: none
+response_type: text/html
+position: 106
+seo_title: CareerSeekers Learning Contract
+---
+{% include header2 %}
+{% block main %}
+
+<div class='container-fluid'>
+  {% include page_header %}
+  <div class="page-header orange-dotted-border-bottom">
+    <form id="lc_goals"action='/forms/goals' class='form-horizontal' method='POST' novalidate='novalidate' role='form'>
+    {% assign contract = session['contract'] %}
+
+    {% csrf_param %}
+    <h3>
+  	Participant Details
+    </h3>
+    <hr>
+    <div class='col-sm-12 light-background padded-top padded-bottom bottom-margin-medium'>
+      <fieldset>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='name'>Participant First Name</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='first_name' name='goals[first_name]' placeholder='First Name of Participant' type='text' value="{{params['first_name']}}">
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='name'>Participant Last Name</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='last_name' name='goals[last_name]' placeholder='Last Name of Participant' type='text' value="{{params['last_name']}}">
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='email'>Participant Email</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='email' name='goals[email]' placeholder='Email' type='email' value="{{params['email']}}">
+          </div>
+        </div>
+	     
+       
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='company'>Company<br></label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='company' name='goals[employer]' placeholder='Company' type='text' value="{{params['employer']}}">
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='manager_name'>Manager First Name</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='manager_firstname' name='goals[manager_firstname]' placeholder='Name of Manager' type='text' value="{{params['manager_firstname']}}">
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='manager_name'>Manager Last Name</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='manager_lastname' name='goals[manager_lastname]' placeholder='Name of Manager' type='text' value="{{params['manager_lastname']}}">
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='col-sm-3 control-label' for='manager_email'>Manager Email</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='manager_email' name='goals[manager_email]' placeholder='Manager Email' type='email' value="{{params['manager_email']}}">
+          </div>
+        </div>
+          
+          <div class='form-group hidden'>
+          <label class='col-sm-3 control-label' for='grad-status'>Graduate Status</label>
+          <div class='col-sm-5'>
+            <input class='form-control' id='gradstatus' name='goals[gradstatus]' placeholder='' type='text' value="{%if params['gradstatus']%}{{params['gradstatus']}}{%else%}{{contract['gradstatus']}}{%endif%}">
+          </div>
+        </div>
+	</div>
+
+  <br><br><br><br>
+
+	<h3>&nbsp</h3>
+	<div class='ratings light-background '>
+	<div class='row no-margin-bottom'>
+        <div class='col-lg-12'>
+          <div class='panel panel-default no-margin-bottom navbar-custom'>
+            <div class='panel-heading navbar-custom' style="background-color: #B43092">
+              <h3>Goals</h3>
+              <h6></h6>
+            </div>
+            <div class='list-group'>
+              <div class='list-group-item'>
+                <div class='row'>
+                  {% if params['gradstatus'] == "grad" %}
+                  <div class='col-lg-3'>
+
+                    <div class='form-group'>
+                      <label class='control-label' for='goal_1'>Goal #1 (standard):</label>
+                      <label class='control-label red' >Mandatory</label>
+                      <textarea  readOnly class='form-control' id='goal_1' maxlength='500' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[goal_1]' rows='5'>To deepen my knowledge of the operations of my organisation, industry trends and potential career opportunities post university.
+                      </textarea>
+                    </div>
+                  </div>
+                  <div class='col-lg-9'>
+                    <div class='form-group'>
+                    <label class='control-label' for='tasks_1'>Tasks & Strategies:</label>
+                      <textarea  readOnly class='form-control' id='tasks_1' maxlength='2000' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[tasks_1]' rows='5'>•	Observe the functions of the various departments of the organisation and write a brief description of each.
+•	Develop an understanding of industry trends by conducting an informational interview with members of two different departments and prepare a written analysis detailing the services offered by the department and their insights into the industry
+• 	Conduct interviews with two Managers within the organisation and prepare an analysis of their career path and transition from university into full-time employment.  Also document three pieces of advice that the Manager has about securing graduate employment.
+•	Research potential opportunities available to you as a graduate within the organisation. Identify the application process and discuss with your CareerSeekers Advisor
+                    </textarea>
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class='col-lg-3'>
+
+                    <div class='form-group'>
+                      <label class='control-label' for='goal_1'>Goal #1 (standard):</label>
+                      <label class='control-label red' >Mandatory</label>
+                      <textarea  readOnly class='form-control' id='goal_1' maxlength='500' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[goal_1]' rows='5'>To gain knowledge of the operations of my organisation, team and department.
+                      </textarea>
+                    </div>
+                  </div>
+                  <div class='col-lg-9'>
+                    <div class='form-group'>
+                    <label class='control-label' for='tasks_1'>Tasks & Strategies:</label>
+                      <textarea  readOnly class='form-control' id='tasks_1' maxlength='2000' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[tasks_1]' rows='5'>•	Observe the functions of the various departments of the organisation and write a brief description of each.
+•	Conduct informational interviews with members of two other departments within my organisation and prepare a written analysis comparing and contrasting the services offered by each department.
+•	Conduct interviews with two Managers within the organisation and prepare an analysis of their career path.  Also document three pieces of advice that the Manager has to get the most out of the internship experience.
+
+                      </textarea>
+                    </div>
+                  </div>
+                  {% endif %}
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div><div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+
+
+                </div>
+              </div>
+
+
+
+              <div class='list-group-item'>
+                <div class='row'>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  <div class='form-group hide-form'>
+                    			<label class='col-sm-3 control-label' for='blank_space'>
+                    			</label>
+                    			<div class='col-sm-5'>
+                    			</div>
+                  </div>
+                  {% if params['gradstatus'] == "grad" %}
+                  <div class='col-lg-3'>
+                    <div class='form-group'>
+                    <label class='control-label' for='goal_2'>Goal #2 (standard):</label>
+                    <label class='control-label red' >Mandatory</label>
+                      <textarea  class='form-control' id='goal_2' maxlength='500' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[goal_2]' rows='5'>To develop and refine my professional skills, including presentation, public speaking skills and two additional skills  [SKILL 1 & SKILL 2] &#013;&#010; - Problem Solving &#013;&#010; - Business Writing &#013;&#010; - Self-Management &#013;&#010; - Planning & Organising &#013;&#010; - Networking</textarea>
+                    </div>
+                  </div>
+                  <div class='col-lg-9'>
+                    <div class='form-group'>
+                    <label class='control-label' for='tasks_2'>Tasks & Strategies:</label>
+                      <textarea  class='form-control tasks_2' id='tasks_2' maxlength='2000' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[tasks_2]' rows='5'>• 	Develop a weekly diary of my internship to document key learning’s, project achievements and skill development progress.
+•	Create and deliver a 5-minute presentation at the completion of the internship to demonstrate key learning and workplace contribution.
+•	Identify my professional development needs and seek feedback regarding areas of further development from at least one member of my team.
+•	Set up a LinkedIn profile, add your CareerSeekers Advisor and join the CareerSeekers Alumni group.
+                      </textarea>
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class='col-lg-3'>
+                    <div class='form-group'>
+                    <label class='control-label' for='goal_2'>Goal #2 (standard):</label>
+                    <label class='control-label red' >Mandatory</label>
+                      <textarea  class='form-control' id='goal_2' maxlength='500' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[goal_2]' rows='5'>To develop and refine my professional skills, including presentation, public speaking skills and two additional skills  [SKILL 1 & SKILL 2] &#013;&#010; - Problem Solving &#013;&#010; - Business Writing &#013;&#010; - Self-Management &#013;&#010; - Planning & Organising &#013;&#010; - Networking</textarea>
+                    </div>
+                  </div>
+                  <div class='col-lg-9'>
+                    <div class='form-group'>
+                    <label class='control-label' for='tasks_2'>Tasks & Strategies:</label>
+                      <textarea  class='form-control tasks_2' id='tasks_2' maxlength='2000' style="height:200px;overflow:hidden;resize:none;background:white;" name='goals[tasks_2]' rows='5'>•	Develop a weekly diary of my internship to document key learnings, project achievements and interpersonal skill development progress. 
+•	Create and deliver a 5-minute presentation at the completion of the internship to demonstrate key learning and workplace contribution.
+•	Identify my professional development needs and seek feedback regarding areas of further development from at least one member of my team.</textarea>
+  </div>
+                  </div>
+                  {% endif %}
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div><div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class='list-group-item'>
+                <div class='row'>
+                  <div class='col-lg-3'>
+                    <div class='form-group hide-form'>
+                      			<label class='col-sm-3 control-label' for='blank_space'>
+                      			</label>
+                      			<div class='col-sm-5'>
+                      			</div>
+                    </div>
+                    <div class='form-group hide-form'>
+                      			<label class='col-sm-3 control-label' for='blank_space'>
+                      			</label>
+                      			<div class='col-sm-5'>
+                      			</div>
+                    </div>
+
+                    <div class='form-group'>
+                    <label class='control-label' for='goal_3'>Goal #3:</label>
+                      <textarea class='form-control' id='goal_3'  style="height:200px;overflow:hidden;resize:none;" name='goals[goal_3]' rows='5'>{{params['goal_3']}}</textarea>
+                    </div>
+                  </div>
+                  <div class='col-lg-9'>
+                    <div class='form-group'>
+                    <label class='control-label' for='tasks_3'>Tasks & Strategies:</label>
+                      <textarea class='form-control tasks_3' id='tasks_3'  style="height:200px;overflow:hidden;resize:none;" name='goals[tasks_3]' rows='5'>{{params['tasks_3']}}</textarea>
+                    </div>
+                  </div>
+
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div><div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class='list-group-item'>
+                <div class='row'>
+                  <div class='col-lg-3'>
+                    <div class='form-group hide-form'>
+                            <label class='col-sm-3 control-label' for='blank_space'>
+                            </label>
+                            <div class='col-sm-5'>
+                            </div>
+                    </div>
+
+                    <div class='form-group'>
+                    <label class='control-label' for='goal_4'>Goal #4:</label>
+                      <textarea class='form-control'  id='goal_4'  style="height:200px;overflow:hidden;resize:none;" name='goals[goal_4]' rows='5'>{{params['goal_4']}}</textarea>
+                    </div>
+                  </div>
+                  <div class='col-lg-9'>
+                    <div class='form-group'>
+                    <label class='control-label' for='tasks_4'>Tasks & Strategies:</label>
+                      <textarea class='form-control tasks_4' id='tasks_4'  style="height:200px;overflow:hidden;resize:none;" name='goals[tasks_4]' rows='5'>{{params['tasks_4']}}</textarea>
+                    </div>
+                  </div>
+
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div><div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class='list-group-item'>
+                <div class='row'>
+                  <div class='form-group hide-form'>
+                          <label class='col-sm-3 control-label' for='blank_space'>
+                          </label>
+                          <div class='col-sm-5'>
+                          </div>
+                  </div>
+
+                  <div class='col-lg-3'>
+                    <div class='form-group'>
+                      <label class='control-label' for='goal_5'>Goal #5:</label>
+                      <textarea class='form-control' id='goal_5'  style="height:200px;overflow:hidden;resize:none;" name='goals[goal_5]' rows='5'>{{params['goal_5']}}</textarea>
+
+
+                    </div>
+                  </div>
+                  <div class='col-lg-9'>
+                    <div class='form-group'>
+                    <label class='control-label' for='tasks_5'>Tasks & Strategies:</label>
+                      <textarea class='form-control tasks_5' id='tasks_5'  style="height:200px;overflow:hidden;resize:none;" name='goals[tasks_5]' rows='5'>{{params['tasks_5']}}</textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div><div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+                <div class='form-group hide-form'>
+                        <label class='col-sm-3 control-label' for='blank_space'>
+                        </label>
+                        <div class='col-sm-5'>
+                        </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='form-group hide-form'>
+            <label class='col-sm-3 control-label' for='blank_space'>
+            </label>
+            <div class='col-sm-5'>
+            </div>
+    </div>
+    <div class='form-group hide-form'>
+            <label class='col-sm-3 control-label' for='blank_space'>
+            </label>
+            <div class='col-sm-5'>
+            </div>
+    </div>
+    <h3>Key Dates</h3>
+  	<div class='col-sm-12 light-background padded-top padded-bottom bottom-margin-medium'>
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='commencement'>Internship Commencement</label>
+        <div class='col-sm-5'>
+          <input class=' form-control' id='commencement' name='goals[commencement]' placeholder='DD/MM/YYYY' type='date' value="{%if params['commencement']%}{{params['commencement']}}{%else%}{{goals['commencement']}}{%endif%}">
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='presentation'>End of Internship Presentation</label>
+        <div class='col-sm-5'>
+          <input class=' form-control' id='presentation' name='goals[presentation]' placeholder='DD/MM/YYYY' type='date' value="{%if params['presentation']%}{{params['presentation']}}{%else%}{{goals['presentation']}}{%endif%}">
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='winter_commencement'>Internship Completion</label>
+        <div class='col-sm-5'>
+          <input class=' form-control' id='completion' name='goals[completion]' placeholder='DD/MM/YYYY' type='date' value="{%if params['completion']%}{{params['completion']}}{%else%}{{goals['completion']}}{%endif%}">
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='semester'>University Semester Begins</label>
+        <div class='col-sm-5'>
+          <input class=' form-control' id='semester' name='goals[semester]' placeholder='DD/MM/YYYY' type='date' >
+        </div>
+      </div>
+    </div>
+
+
+    <div class='row'>
+      <div class='col-sm-12'>
+        <div class='form-group'>
+          <div class='col-sm-2 pull-right'>
+            <button class='btn orange-button' type='submit'>Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+{% endblock %}
+
+
+{% include footer %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACu7936Ft2gKVaG9vHlx8IL_QTdS1pHbE&callback=initMap"
+                async defer></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap-datepicker.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/docs.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/player.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/nod.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/spin.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/jquery.fullPage.js" type="text/javascript" ></script>
+<script type="text/javascript">
+    $(function() {
+    //console.log( "ready!" );
+        var win = $(window).width();  
+        if(win < 1445){
+            
+            $("#banner_div").css("height","450px");
+        }
+        
+        if(win < 415){
+            console.log("mobile");
+            $("#seekers-mini-logo").css("margin-left","15px");
+            $("#seekers-nav").css("padding-left","30px");
+        }
+})
+</script>
+{% block javascripts %}
+
+<script>
+
+
+  $(document).ready(function() {
+
+    var metrics = [
+
+                    [ "[name='goals[first_name]']", 'presence', 'First Name is required and cannot be empty' ],
+
+                    [ "[name='goals[last_name]']", 'presence', 'Last Name is required and cannot be empty' ],
+
+                    [ "[name='goals[email]']", 'presence', 'Email is required and cannot be empty' ],
+
+                    [ "[name='goals[email]']", 'email', 'Invalid email address' ],
+
+
+                    [ "[name='goals[employer]']", 'presence', 'Company is required and cannot be empty' ],
+
+                    [ "[name='goals[manager_firstname]']", 'presence', 'Manager First name is required and cannot be empty' ],
+
+                    [ "[name='goals[manager_lastname]']", 'presence', 'Manager Last name is required and cannot be empty' ],
+
+                    [ "[name='goals[manager_email]']", 'presence', 'Manager email is required and cannot be empty' ],
+
+                    [ "[name='goals[manager_email]']", 'email', 'Invalid email address' ],
+
+                    [ "[name='goals[goal_3]']", 'presence', 'Goal #3 is required and cannot be empty' ],
+
+                    [ "[name='goals[tasks_3]']", 'presence', 'Tasks and Strategies are required and cannot be empty' ],
+
+                    [ "[name='goals[goal_4]']", 'presence', 'Goal #4 is required and cannot be empty' ],
+
+                    [ "[name='goals[tasks_4]']", 'presence', 'Tasks and Strategies is required and cannot be empty' ],
+
+                    
+
+                    [ "[name='goals[semester]']", 'presence', 'Semester commencement date is required and cannot be empty' ],
+
+                    [ "[name='goals[commencement]']", 'presence', 'Internship Commencement date is required and cannot be empty' ],
+        
+                    [ "[name='goals[presentation]']", 'presence', 'End of Internship Presentation date is required and cannot be empty' ],
+
+                    [ "[name='goals[completion]']", 'presence', 'Internship Completion date is required and cannot be empty' ],
+
+                    
+
+                  ];
+
+
+
+    $( "form" ).nod( metrics , {
+
+                      groupSelector: ".form-group",
+
+                      groupClass: "has-error",
+
+                      helpSpanDisplay: "help-block small"
+
+    });
+    
+    $(".tasks_2").focus(function() {
+      if(document.getElementById('tasks_2').value === ''){
+          document.getElementById('tasks_2').value +='•	';
+  	     }
+    });
+
+    $(".tasks_2").keyup(function(event){
+    	var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+           document.getElementById('tasks_2').value +='•	';
+    	}
+    	var txtval = document.getElementById('tasks_2').value;
+    	if(txtval.substr(txtval.length - 1) == '\n'){
+    		document.getElementById('tasks_2').value = txtval.substring(0,txtval.length - 1);
+    	}
+    });
+      
+    $(".tasks_3").focus(function() {
+      if(document.getElementById('tasks_3').value === ''){
+          document.getElementById('tasks_3').value +='•	';
+  	     }
+    });
+
+    $(".tasks_3").keyup(function(event){
+    	var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+           document.getElementById('tasks_3').value +='•	';
+    	}
+    	var txtval = document.getElementById('tasks_3').value;
+    	if(txtval.substr(txtval.length - 1) == '\n'){
+    		document.getElementById('tasks_3').value = txtval.substring(0,txtval.length - 1);
+    	}
+    });
+
+    $(".tasks_4").focus(function() {
+      if(document.getElementById('tasks_4').value === ''){
+          document.getElementById('tasks_4').value +='•	';
+  	     }
+    });
+
+    $(".tasks_4").keyup(function(event){
+    	var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+           document.getElementById('tasks_4').value +='•	';
+    	}
+    	var txtval = document.getElementById('tasks_4').value;
+    	if(txtval.substr(txtval.length - 1) == '\n'){
+    		document.getElementById('tasks_4').value = txtval.substring(0,txtval.length - 1);
+    	}
+    });
+
+    $(".tasks_5").focus(function() {
+      if(document.getElementById('tasks_5').value === ''){
+          document.getElementById('tasks_5').value +='•	';
+  	     }
+    });
+
+    $(".tasks_5").keyup(function(event){
+    	var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+           document.getElementById('tasks_5').value +='•	';
+    	}
+    	var txtval = document.getElementById('tasks_5').value;
+    	if(txtval.substr(txtval.length - 1) == '\n'){
+    		document.getElementById('tasks_5').value = txtval.substring(0,txtval.length - 1);
+    	}
+    });
+    
+  function postToGoogle() {
+
+    var firstName = $("#first_name").val();
+    var lastName = $("#last_name").val();
+    var email = $("#email").val();
+    var company = $('#company').val()
+    var manager_first = $("#manager_firstname").val();
+    var manager_last = $("#manager_lastname").val();
+    var manager_email = $('#manager_email').val()
+    var gradstatus = $("#gradstatus").val();
+      
+    var goals_one = $("#goal_1").val();
+    var goals_two = $("#goal_2").val();
+    var goals_three = $("#goal_3").val();
+    var goals_four = $("#goal_4").val();
+    var goals_five = $("#goal_5").val();
+            
+    var task_one = $("#tasks_1").val();
+    var task_two = $("#tasks_2").val();
+    var task_three = $("#tasks_3").val();
+    var task_four = $("#tasks_4").val();
+    var task_five = $("#tasks_5").val();
+    var commence = $("#commencement").val();
+    var presentation = $("#presentation").val();
+    var completion = $("#completion").val();
+    var university_start = $("#semester").val();
+      
+      
+    var ajaxData = {"id": firstName,
+                    "entry.1862661918": lastName,
+                    "entry.730450753": email,
+                    "entry.967983336": company,
+                    "entry.1716666657": manager_first,
+                    "entry.209084879": manager_last,
+                    "entry.357859019": manager_email,
+                    "entry.46714137": gradstatus,
+                    "entry.1856718304": goals_one,
+                    "entry.1123400366": goals_two,
+                    "entry.423526007": goals_three,
+                    "entry.428247000": goals_four,
+                    "entry.715990456": goals_five,
+                    "entry.2066429542": task_one,
+                    "entry.1935838082": task_two,
+                    "tasks": task_three,
+                    "entry.731344024": task_four,
+                    "entry.538319437": task_five,
+                    "entry.1601403612": commence,
+                    "entry.1782867248": presentation,
+                    "entry.1096356346": completion,
+                    "entry.1515616812": university_start
+                   };
+
+    $.ajax({
+        type: "POST",
+        url: "https://script.google.com/a/careerseekers.org.au/macros/s/AKfycbx5LEIZ7qrbrdWy12BEUD3FPkqcGcoxOe5-yrWCvY4Ie2nVPxc/exec",
+        data: JSON.stringify(ajaxData),
+        dataType: "json",
+        statusCode: {
+            0: function() {
+                //Success message
+            },
+            200: function() {
+                //Success Message
+            }
+        },
+        xhrFields: {
+            withCredentials: true
+        }
+    });
+        //alert('working');
+    }
+    $('#lc_goals').submit(function() {
+            postToGoogle();
+            //return false;
+            $("#goal_1").css("height", "100");
+            $("#goal_2").css("height", "100");
+            $("#tasks_1").css("height", "100");
+            $("#tasks_2").css("height", "100");
+    });
+
+
+  });
+
+</script>
+
+{% endblock %}

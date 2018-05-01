@@ -1,0 +1,205 @@
+---
+title: Manager Resources
+slug: manager-resources
+listed: false
+published: true
+cache_strategy: none
+response_type: text/html
+position: 101
+seo_title: Manager Resources
+editable_elements:
+
+---
+
+{% include header2 %}
+{% block main %}
+{% capture 'about_us_text' %}{% editable_text 'about_us_text' %}{% endeditable_text %}{% endcapture %}
+{% capture banner_url %}{% editable_file 'banner' %}{% endeditable_file %}{% endcapture %}
+{% if banner_url != '' %}
+<div id="banner_div" class='banner visible-lg visible-md'>
+  <img class='img-responsive' src='http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/cs-banner-3.png'>
+</div>
+{% endif %}
+<style>
+    .youtube-player { display: block; margin: 0 auto; }
+</style>
+<div class='container-fluid'>
+
+
+  {% editable_text content %}
+
+  {% endeditable_text %}
+  <div class='container-fluid white-background'>
+    <div class='container marketing'>
+      <div class='page-header container text-center white-background'>
+        <h1>Manager Resources</h1>
+
+      </div>
+      <div class='row'>
+        <div class="col-md-12 text-center lead">
+          <p>
+          {% editable_text manager_blurb %}
+          Welcome to CareerSeekers! Many of you will have arrived at this page as part of our Manager Induction training.
+          <br><br>
+          Please review the below materials before and/or after your scheduled session.
+
+          {% endeditable_text %}
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-12 padded-top padded-bottom'>
+
+
+  </div>
+
+  <div class='container-fluid white-background'>
+    <div class='container marketing'>
+      <div class='page-header container text-center white-background'>
+        <h1>About CareerSeekers</h1>
+
+      </div>
+      <div class='row'>
+        <div class="col-md-12 text-center">
+
+          <div class='col-md-12'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vF4cd6LEdpk" frameborder="0" gesture="media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class="col-md-12 text-center">
+            <h3>Our Plan</h3>
+          <div class='col-md-12'>
+            <a href="http://59d107f8c0dc63892c5e-c6fb9b4f3c3891548580b4277d55f88f.r19.cf4.rackcdn.com/CS%20-%20Our%20Plan.pdf" target="_blank">
+                <img class="img-responsive" src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Pages_from_CS_-_Our_Plan.png" style="margin:0 auto;height:400px"/>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <div class='container-fluid white-background'>
+		<div class='container marketing'>
+			<div class='page-header container text-center white-background'>
+				<h1>Learning Contract</h1>
+
+			</div>
+			<div class='row'>
+				<div class="col-md-12 text-center">
+
+					<div class='col-md-12'>
+						<a href="/forms/learning-contract" target="_blank"><img class="img-responsive" src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/cs-learningcontract.png" style="margin:0 auto;height:400px"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+  <div class='container-fluid white-background'>
+		<div class='container marketing'>
+			<div class='page-header container text-center white-background'>
+				<h1>Resources</h1>
+
+			</div>
+			<div class='row'>
+				<div class="col-md-12 text-center">
+
+					<div class='col-md-4'>
+                        <h4>Letter to Managers</h4>
+						<a href="http://59d107f8c0dc63892c5e-c6fb9b4f3c3891548580b4277d55f88f.r19.cf4.rackcdn.com/CS%20Letter%20to%20Managers.pdf" target="_blank"><img class="img-responsive" src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Pages_from_CS_Letter_to_Managers.png" style="margin:0 auto;height:400;"/></a>
+					</div>
+                    <div class='col-md-4'>
+                        <h4>WWR briefing</h4>
+						<a href="http://59d107f8c0dc63892c5e-c6fb9b4f3c3891548580b4277d55f88f.r19.cf4.rackcdn.com/CS%20Working%20with%20refugees.pdf" target="_blank"><img class="img-responsive" src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Pages_from_CS_Working_with_refugees.png" style="margin:0 auto;height:400;"/></a>
+					</div>
+                    <div class='col-md-4'>
+                        <h4>Interview with a former intern </h4>
+						<a href="http://59d107f8c0dc63892c5e-c6fb9b4f3c3891548580b4277d55f88f.r19.cf4.rackcdn.com/CS%20Aarabi.pdf" target="_blank"><img class="img-responsive" src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/images/Pages_from_CS_Aarabi.png" style="margin:0 auto;height:400;"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  
+
+  
+
+
+
+  <div class='container-fluid white-background'>
+		<div class='container marketing'>
+			<div class='page-header container text-center white-background'>
+				<h1>Hear from Past Students</h1>
+
+			</div>
+			<div class='row'>
+                
+                {% for story in contents.participant_stories %}
+                <div class='col-lg-6' style="text-align: center;">
+                    <a href="" data-target="#{{story._slug}}-modal" data-toggle='modal'><img alt='{{story.student_name | escape }}' src='{{story.url | escape }}' ></a>
+                    <h3 style="line-height:0.2em;">  {{story.participant_name | escape }}</h3>
+                    <p>  {{story.origin | escape }}</p>
+                    <b>{{story.participant_stream | escape }}</b>
+                    <p>{{story.company | escape }}</p>
+
+
+                    <div aria-hidden='true' class='modal fade' id='{{story._slug}}-modal' role='dialog' tabindex='-1'>
+                        <div class='modal-dialog'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>×</button>
+                                    <h2 class='modal-title' id='myModalLabel'>{{story.participant_name}}</h2>
+                                </div>
+                                <div class='modal-body'>
+                                    <div class='player' id='{{story._slug}}-video' src='{{story.youtube_video_url | escape}}'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+		</div>
+	</div>
+
+  
+
+
+</div>
+{% endblock %}
+{% include footer %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACu7936Ft2gKVaG9vHlx8IL_QTdS1pHbE&callback=initMap"
+                async defer></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/bootstrap-datepicker.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/docs.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/player.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/nod.min.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/spin.js" type="text/javascript" ></script>
+<script src="http://119.9.8.33/sites/533a6766f92ea180dd000002/theme/javascripts/jquery.fullPage.js" type="text/javascript" ></script>
+<script type="text/javascript">
+    $(function() {
+    //console.log( "ready!" );
+        var win = $(window).width();  
+        if(win < 1445){
+            
+            $("#banner_div").css("height","450px");
+        }
+        
+        if(win < 415){
+            console.log("mobile");
+            $("#seekers-mini-logo").css("margin-left","15px");
+            $("#seekers-nav").css("padding-left","30px");
+        }
+})
+</script>

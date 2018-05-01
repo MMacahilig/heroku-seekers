@@ -1,0 +1,20 @@
+---
+name: Forms
+description: Forms
+slug: forms
+label_field_name: title
+order_by: manually
+order_direction: asc
+fields:
+- title:
+    label: title
+    type: string
+    required: true
+    unique: false
+    localized: false
+- link:
+    label: link
+    type: string
+    required: true
+    unique: false
+    localized: false
